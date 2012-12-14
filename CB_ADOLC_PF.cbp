@@ -14,6 +14,7 @@
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="D:/Lib/boost_1_52_0" />
+					<Add directory="D:/Lib/eigen" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -36,8 +37,11 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="src/abstractreader.cpp" />
 		<Unit filename="src/abstractreader.h" />
+		<Unit filename="src/commonstructure.h" />
 		<Unit filename="src/ipsotextreader.cpp" />
 		<Unit filename="src/ipsotextreader.h" />
+		<Unit filename="src/ymatrix.cpp" />
+		<Unit filename="src/ymatrix.h" />
 		<Extensions>
 			<DoxyBlocks>
 				<comment_style block="0" line="0" />

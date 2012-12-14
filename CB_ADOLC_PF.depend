@@ -2,13 +2,15 @@
 1355367448 source:d:\mypro\cb_adolc_pf\main.cpp
 	<iostream>
 
-1355394413 source:d:\mypro\cb_adolc_pf\src\abstractreader.cpp
+1355419792 source:d:\mypro\cb_adolc_pf\src\abstractreader.cpp
 	"abstractreader.h"
 
-1355399862 d:\mypro\cb_adolc_pf\src\abstractreader.h
+1355419782 d:\mypro\cb_adolc_pf\src\abstractreader.h
 	<list>
 	<boost/algorithm/string.hpp>
+	<boost/shared_ptr.hpp>
 	<fstream>
+	"commonstructure.h"
 
 1213877244 d:\lib\boost_1_52_0\boost\algorithm\string.hpp
 	<boost/algorithm/string/std_containers_traits.hpp>
@@ -2898,4 +2900,1748 @@
 	<boost/algorithm/string/find_format.hpp>
 	<boost/algorithm/string/finder.hpp>
 	<boost/algorithm/string/formatter.hpp>
+
+1236010936 d:\lib\boost_1_52_0\boost\shared_ptr.hpp
+	<boost/smart_ptr/shared_ptr.hpp>
+
+1324858980 d:\lib\boost_1_52_0\boost\smart_ptr\shared_ptr.hpp
+	<boost/config.hpp>
+	<boost/smart_ptr/detail/shared_ptr_nmt.hpp>
+	<boost/config/no_tr1/memory.hpp>
+	<boost/assert.hpp>
+	<boost/checked_delete.hpp>
+	<boost/throw_exception.hpp>
+	<boost/smart_ptr/detail/shared_count.hpp>
+	<boost/detail/workaround.hpp>
+	<boost/smart_ptr/detail/sp_convertible.hpp>
+	<boost/smart_ptr/detail/spinlock_pool.hpp>
+	<boost/memory_order.hpp>
+	<algorithm>
+	<functional>
+	<typeinfo>
+	<cstddef>
+	<iosfwd>
+	<ostream>
+	<boost/smart_ptr/detail/operator_bool.hpp>
+
+1236010936 d:\lib\boost_1_52_0\boost\smart_ptr\detail\shared_ptr_nmt.hpp
+	<boost/assert.hpp>
+	<boost/checked_delete.hpp>
+	<boost/throw_exception.hpp>
+	<boost/smart_ptr/detail/atomic_count.hpp>
+	<memory>
+	<algorithm>
+	<functional>
+	<new>
+
+1092330787 d:\lib\boost_1_52_0\boost\checked_delete.hpp
+
+1240136270 d:\lib\boost_1_52_0\boost\smart_ptr\detail\atomic_count.hpp
+	<boost/config.hpp>
+	<boost/smart_ptr/detail/sp_has_sync.hpp>
+	<boost/smart_ptr/detail/atomic_count_pthreads.hpp>
+	<boost/smart_ptr/detail/atomic_count_gcc_x86.hpp>
+	<boost/smart_ptr/detail/atomic_count_win32.hpp>
+	<boost/smart_ptr/detail/atomic_count_sync.hpp>
+	<boost/smart_ptr/detail/atomic_count_gcc.hpp>
+	<boost/smart_ptr/detail/atomic_count_pthreads.hpp>
+
+1320678343 d:\lib\boost_1_52_0\boost\smart_ptr\detail\sp_has_sync.hpp
+
+1240136270 d:\lib\boost_1_52_0\boost\smart_ptr\detail\atomic_count_pthreads.hpp
+	<pthread.h>
+
+1240136270 d:\lib\boost_1_52_0\boost\smart_ptr\detail\atomic_count_gcc_x86.hpp
+
+1236010936 d:\lib\boost_1_52_0\boost\smart_ptr\detail\atomic_count_win32.hpp
+	<boost/detail/interlocked.hpp>
+
+1349985065 d:\lib\boost_1_52_0\boost\detail\interlocked.hpp
+	<boost/config.hpp>
+	<windows.h>
+	<intrin.h>
+
+1240136270 d:\lib\boost_1_52_0\boost\smart_ptr\detail\atomic_count_sync.hpp
+	<ia64intrin.h>
+
+1240136270 d:\lib\boost_1_52_0\boost\smart_ptr\detail\atomic_count_gcc.hpp
+	<ext/atomicity.h>
+	<bits/atomicity.h>
+
+1300837092 d:\lib\boost_1_52_0\boost\smart_ptr\detail\shared_count.hpp
+	<boost/config.hpp>
+	<boost/checked_delete.hpp>
+	<boost/throw_exception.hpp>
+	<boost/smart_ptr/bad_weak_ptr.hpp>
+	<boost/smart_ptr/detail/sp_counted_base.hpp>
+	<boost/smart_ptr/detail/sp_counted_impl.hpp>
+	<boost/detail/workaround.hpp>
+	<boost/config/no_tr1/memory.hpp>
+	<functional>
+	<new>
+
+1236010936 d:\lib\boost_1_52_0\boost\smart_ptr\bad_weak_ptr.hpp
+	<exception>
+
+1331574002 d:\lib\boost_1_52_0\boost\smart_ptr\detail\sp_counted_base.hpp
+	<boost/config.hpp>
+	<boost/smart_ptr/detail/sp_has_sync.hpp>
+	<boost/smart_ptr/detail/sp_counted_base_nt.hpp>
+	<boost/smart_ptr/detail/sp_counted_base_spin.hpp>
+	<boost/smart_ptr/detail/sp_counted_base_pt.hpp>
+	<boost/smart_ptr/detail/sp_counted_base_nt.hpp>
+	<boost/smart_ptr/detail/sp_counted_base_gcc_x86.hpp>
+	<boost/smart_ptr/detail/sp_counted_base_gcc_ia64.hpp>
+	<boost/smart_ptr/detail/sp_counted_base_acc_ia64.hpp>
+	<boost/smart_ptr/detail/sp_counted_base_vacpp_ppc.hpp>
+	<boost/smart_ptr/detail/sp_counted_base_cw_ppc.hpp>
+	<boost/smart_ptr/detail/sp_counted_base_gcc_ppc.hpp>
+	<boost/smart_ptr/detail/sp_counted_base_gcc_mips.hpp>
+	<boost/smart_ptr/detail/sp_counted_base_sync.hpp>
+	<boost/smart_ptr/detail/sp_counted_base_gcc_sparc.hpp>
+	<boost/smart_ptr/detail/sp_counted_base_w32.hpp>
+	<boost/smart_ptr/detail/sp_counted_base_nt.hpp>
+	<boost/smart_ptr/detail/sp_counted_base_spin.hpp>
+
+1236010936 d:\lib\boost_1_52_0\boost\smart_ptr\detail\sp_counted_base_nt.hpp
+	<boost/detail/sp_typeinfo.hpp>
+
+1236010936 d:\lib\boost_1_52_0\boost\smart_ptr\detail\sp_counted_base_spin.hpp
+	<boost/detail/sp_typeinfo.hpp>
+	<boost/smart_ptr/detail/spinlock_pool.hpp>
+
+1300836575 d:\lib\boost_1_52_0\boost\smart_ptr\detail\spinlock_pool.hpp
+	<boost/config.hpp>
+	<boost/smart_ptr/detail/spinlock.hpp>
+	<cstddef>
+
+1300839234 d:\lib\boost_1_52_0\boost\smart_ptr\detail\spinlock.hpp
+	<boost/config.hpp>
+	<boost/smart_ptr/detail/sp_has_sync.hpp>
+	<boost/smart_ptr/detail/spinlock_pt.hpp>
+	<boost/smart_ptr/detail/spinlock_gcc_arm.hpp>
+	<boost/smart_ptr/detail/spinlock_sync.hpp>
+	<boost/smart_ptr/detail/spinlock_w32.hpp>
+	<boost/smart_ptr/detail/spinlock_pt.hpp>
+	<boost/smart_ptr/detail/spinlock_nt.hpp>
+
+1236010936 d:\lib\boost_1_52_0\boost\smart_ptr\detail\spinlock_pt.hpp
+	<pthread.h>
+
+1331573871 d:\lib\boost_1_52_0\boost\smart_ptr\detail\spinlock_gcc_arm.hpp
+	<boost/smart_ptr/detail/yield_k.hpp>
+
+1278796025 d:\lib\boost_1_52_0\boost\smart_ptr\detail\yield_k.hpp
+	<boost/config.hpp>
+	<windows.h>
+	<sched.h>
+	<time.h>
+
+1236010936 d:\lib\boost_1_52_0\boost\smart_ptr\detail\spinlock_sync.hpp
+	<boost/smart_ptr/detail/yield_k.hpp>
+	<ia64intrin.h>
+
+1236010936 d:\lib\boost_1_52_0\boost\smart_ptr\detail\spinlock_w32.hpp
+	<boost/detail/interlocked.hpp>
+	<boost/smart_ptr/detail/yield_k.hpp>
+
+1236010936 d:\lib\boost_1_52_0\boost\smart_ptr\detail\spinlock_nt.hpp
+	<boost/assert.hpp>
+
+1236010936 d:\lib\boost_1_52_0\boost\smart_ptr\detail\sp_counted_base_pt.hpp
+	<boost/detail/sp_typeinfo.hpp>
+	<pthread.h>
+
+1236010936 d:\lib\boost_1_52_0\boost\smart_ptr\detail\sp_counted_base_gcc_x86.hpp
+	<boost/detail/sp_typeinfo.hpp>
+
+1236010936 d:\lib\boost_1_52_0\boost\smart_ptr\detail\sp_counted_base_gcc_ia64.hpp
+	<boost/detail/sp_typeinfo.hpp>
+
+1236010936 d:\lib\boost_1_52_0\boost\smart_ptr\detail\sp_counted_base_acc_ia64.hpp
+	<boost/detail/sp_typeinfo.hpp>
+	<machine/sys/inline.h>
+
+1331574002 d:\lib\boost_1_52_0\boost\smart_ptr\detail\sp_counted_base_vacpp_ppc.hpp
+	<boost/detail/sp_typeinfo.hpp>
+
+1236010936 d:\lib\boost_1_52_0\boost\smart_ptr\detail\sp_counted_base_cw_ppc.hpp
+	<boost/detail/sp_typeinfo.hpp>
+
+1236010936 d:\lib\boost_1_52_0\boost\smart_ptr\detail\sp_counted_base_gcc_ppc.hpp
+	<boost/detail/sp_typeinfo.hpp>
+
+1320675923 d:\lib\boost_1_52_0\boost\smart_ptr\detail\sp_counted_base_gcc_mips.hpp
+	<boost/detail/sp_typeinfo.hpp>
+
+1236010936 d:\lib\boost_1_52_0\boost\smart_ptr\detail\sp_counted_base_sync.hpp
+	<boost/detail/sp_typeinfo.hpp>
+	<limits.h>
+	<ia64intrin.h>
+
+1259612234 d:\lib\boost_1_52_0\boost\smart_ptr\detail\sp_counted_base_gcc_sparc.hpp
+	<boost/detail/sp_typeinfo.hpp>
+	<inttypes.h>
+
+1236010936 d:\lib\boost_1_52_0\boost\smart_ptr\detail\sp_counted_base_w32.hpp
+	<boost/detail/interlocked.hpp>
+	<boost/detail/workaround.hpp>
+	<boost/detail/sp_typeinfo.hpp>
+
+1300837092 d:\lib\boost_1_52_0\boost\smart_ptr\detail\sp_counted_impl.hpp
+	<boost/config.hpp>
+	<boost/checked_delete.hpp>
+	<boost/smart_ptr/detail/sp_counted_base.hpp>
+	<boost/smart_ptr/detail/quick_allocator.hpp>
+	<memory>
+	<cstddef>
+
+1260812659 d:\lib\boost_1_52_0\boost\smart_ptr\detail\quick_allocator.hpp
+	<boost/config.hpp>
+	<boost/smart_ptr/detail/lightweight_mutex.hpp>
+	<boost/type_traits/type_with_alignment.hpp>
+	<boost/type_traits/alignment_of.hpp>
+	<new>
+	<cstddef>
+
+1236011851 d:\lib\boost_1_52_0\boost\smart_ptr\detail\lightweight_mutex.hpp
+	<boost/config.hpp>
+	<boost/smart_ptr/detail/lwm_nop.hpp>
+	<boost/smart_ptr/detail/lwm_pthreads.hpp>
+	<boost/smart_ptr/detail/lwm_win32_cs.hpp>
+
+1236010936 d:\lib\boost_1_52_0\boost\smart_ptr\detail\lwm_nop.hpp
+
+1259612701 d:\lib\boost_1_52_0\boost\smart_ptr\detail\lwm_pthreads.hpp
+	<boost/assert.hpp>
+	<pthread.h>
+
+1236010936 d:\lib\boost_1_52_0\boost\smart_ptr\detail\lwm_win32_cs.hpp
+	<windows.h>
+
+1325956680 d:\lib\boost_1_52_0\boost\type_traits\type_with_alignment.hpp
+	<boost/mpl/if.hpp>
+	<boost/preprocessor/list/for_each_i.hpp>
+	<boost/preprocessor/tuple/to_list.hpp>
+	<boost/preprocessor/cat.hpp>
+	<boost/preprocessor/list/transform.hpp>
+	<boost/preprocessor/list/append.hpp>
+	<boost/type_traits/alignment_of.hpp>
+	<boost/type_traits/is_pod.hpp>
+	<boost/static_assert.hpp>
+	<boost/config.hpp>
+	<boost/type_traits/detail/bool_trait_def.hpp>
+	<cstddef>
+	<boost/type_traits/detail/bool_trait_undef.hpp>
+
+1095090689 d:\lib\boost_1_52_0\boost\preprocessor\list\transform.hpp
+	<boost/preprocessor/config/config.hpp>
+	<boost/preprocessor/list/fold_right.hpp>
+	<boost/preprocessor/tuple/elem.hpp>
+	<boost/preprocessor/tuple/rem.hpp>
+
+1095090689 d:\lib\boost_1_52_0\boost\preprocessor\list\append.hpp
+	<boost/preprocessor/config/config.hpp>
+	<boost/preprocessor/list/fold_right.hpp>
+
+1274895241 d:\lib\boost_1_52_0\boost\smart_ptr\detail\sp_convertible.hpp
+	<boost/config.hpp>
+
+1259862637 d:\lib\boost_1_52_0\boost\memory_order.hpp
+
+1236012322 d:\lib\boost_1_52_0\boost\smart_ptr\detail\operator_bool.hpp
+
+1355419820 source:d:\mypro\cb_adolc_pf\src\ipsotextreader.cpp
+	"ipsotextreader.h"
+
+1355414840 d:\mypro\cb_adolc_pf\src\ipsotextreader.h
+	"abstractreader.h"
+	<boost/algorithm/string/split.hpp>
+	<boost/lexical_cast.hpp>
+	<vector>
+
+1349021252 d:\lib\boost_1_52_0\boost\lexical_cast.hpp
+	<boost/config.hpp>
+	<climits>
+	<cstddef>
+	<string>
+	<cstring>
+	<cstdio>
+	<typeinfo>
+	<exception>
+	<boost/limits.hpp>
+	<boost/mpl/if.hpp>
+	<boost/throw_exception.hpp>
+	<boost/type_traits/ice.hpp>
+	<boost/type_traits/is_pointer.hpp>
+	<boost/static_assert.hpp>
+	<boost/detail/lcast_precision.hpp>
+	<boost/detail/workaround.hpp>
+	<locale>
+	<strstream>
+	<sstream>
+	<cmath>
+	<istream>
+	<array>
+	<boost/array.hpp>
+	<boost/numeric/conversion/cast.hpp>
+	<boost/type_traits/make_unsigned.hpp>
+	<boost/type_traits/is_signed.hpp>
+	<boost/type_traits/is_integral.hpp>
+	<boost/type_traits/is_arithmetic.hpp>
+	<boost/type_traits/remove_pointer.hpp>
+	<boost/math/special_functions/sign.hpp>
+	<boost/math/special_functions/fpclassify.hpp>
+	<boost/range/iterator_range_core.hpp>
+	<boost/container/container_fwd.hpp>
+	<cwchar>
+
+1266165081 d:\lib\boost_1_52_0\boost\detail\lcast_precision.hpp
+	<climits>
+	<ios>
+	<limits>
+	<boost/config.hpp>
+	<boost/integer_traits.hpp>
+	<boost/mpl/if.hpp>
+	<boost/type_traits/is_abstract.hpp>
+	<boost/assert.hpp>
+	<boost/static_assert.hpp>
+
+1348857252 d:\lib\boost_1_52_0\boost\array.hpp
+	<boost/detail/workaround.hpp>
+	<cstddef>
+	<stdexcept>
+	<boost/assert.hpp>
+	<boost/swap.hpp>
+	<boost/detail/iterator.hpp>
+	<boost/throw_exception.hpp>
+	<boost/functional/hash_fwd.hpp>
+	<algorithm>
+	<boost/config.hpp>
+
+1226711484 d:\lib\boost_1_52_0\boost\swap.hpp
+	"boost/utility/swap.hpp"
+
+1226711484 d:\lib\boost_1_52_0\boost\utility\swap.hpp
+	<algorithm>
+	<cstddef>
+
+1236811869 d:\lib\boost_1_52_0\boost\functional\hash_fwd.hpp
+	<boost/functional/hash/hash_fwd.hpp>
+
+1236811869 d:\lib\boost_1_52_0\boost\functional\hash\hash_fwd.hpp
+	<boost/config.hpp>
+	<cstddef>
+	<boost/detail/workaround.hpp>
+
+1317922037 d:\lib\boost_1_52_0\boost\numeric\conversion\cast.hpp
+	<boost/detail/workaround.hpp>
+	<boost/numeric/conversion/detail/old_numeric_cast.hpp>
+	<boost/type.hpp>
+	<boost/numeric/conversion/converter.hpp>
+	<boost/numeric/conversion/numeric_cast_traits.hpp>
+
+1206222355 d:\lib\boost_1_52_0\boost\numeric\conversion\detail\old_numeric_cast.hpp
+	<boost/config.hpp>
+	<cassert>
+	<typeinfo>
+	<boost/type.hpp>
+	<boost/limits.hpp>
+	<boost/numeric/conversion/converter_policies.hpp>
+
+1331364696 d:\lib\boost_1_52_0\boost\numeric\conversion\converter_policies.hpp
+	<typeinfo>
+	<boost/config/no_tr1/cmath.hpp>
+	<boost/throw_exception.hpp>
+	<functional>
+	"boost/type_traits/is_arithmetic.hpp"
+	"boost/mpl/if.hpp"
+	"boost/mpl/integral_c.hpp"
+
+1221823449 d:\lib\boost_1_52_0\boost\config\no_tr1\cmath.hpp
+	<cmath>
+
+1216826127 d:\lib\boost_1_52_0\boost\numeric\conversion\converter.hpp
+	"boost/numeric/conversion/conversion_traits.hpp"
+	"boost/numeric/conversion/converter_policies.hpp"
+	"boost/numeric/conversion/detail/converter.hpp"
+
+1216826127 d:\lib\boost_1_52_0\boost\numeric\conversion\conversion_traits.hpp
+	"boost/numeric/conversion/detail/conversion_traits.hpp"
+	"boost/detail/workaround.hpp"
+	"boost/config.hpp"
+
+1216826127 d:\lib\boost_1_52_0\boost\numeric\conversion\detail\conversion_traits.hpp
+	"boost/type_traits/is_arithmetic.hpp"
+	"boost/type_traits/is_same.hpp"
+	"boost/type_traits/remove_cv.hpp"
+	"boost/numeric/conversion/detail/meta.hpp"
+	"boost/numeric/conversion/detail/int_float_mixture.hpp"
+	"boost/numeric/conversion/detail/sign_mixture.hpp"
+	"boost/numeric/conversion/detail/udt_builtin_mixture.hpp"
+	"boost/numeric/conversion/detail/is_subranged.hpp"
+
+1216826127 d:\lib\boost_1_52_0\boost\numeric\conversion\detail\meta.hpp
+	"boost/type_traits/remove_cv.hpp"
+	"boost/mpl/if.hpp"
+	"boost/mpl/eval_if.hpp"
+	"boost/mpl/equal_to.hpp"
+	"boost/mpl/not.hpp"
+	"boost/mpl/and.hpp"
+	"boost/mpl/bool.hpp"
+	"boost/mpl/identity.hpp"
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\equal_to.hpp
+	<boost/mpl/aux_/comparison_op.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\aux_\comparison_op.hpp
+	<boost/mpl/bool.hpp>
+	<boost/mpl/aux_/value_wknd.hpp>
+	<boost/mpl/aux_/numeric_op.hpp>
+	<boost/mpl/aux_/config/static_constant.hpp>
+	<boost/mpl/aux_/config/use_preprocessed.hpp>
+	<boost/mpl/aux_/include_preprocessed.hpp>
+	<boost/mpl/aux_/config/integral.hpp>
+	<boost/preprocessor/cat.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\aux_\numeric_op.hpp
+	<boost/mpl/numeric_cast.hpp>
+	<boost/mpl/apply_wrap.hpp>
+	<boost/mpl/if.hpp>
+	<boost/mpl/tag.hpp>
+	<boost/mpl/aux_/numeric_cast_utils.hpp>
+	<boost/mpl/aux_/na.hpp>
+	<boost/mpl/aux_/na_spec.hpp>
+	<boost/mpl/aux_/lambda_support.hpp>
+	<boost/mpl/aux_/msvc_eti_base.hpp>
+	<boost/mpl/aux_/value_wknd.hpp>
+	<boost/mpl/aux_/config/eti.hpp>
+	<boost/mpl/aux_/nttp_decl.hpp>
+	<boost/mpl/aux_/config/static_constant.hpp>
+	<boost/mpl/limits/arity.hpp>
+	<boost/mpl/aux_/preprocessor/partial_spec_params.hpp>
+	<boost/mpl/aux_/preprocessor/def_params_tail.hpp>
+	<boost/mpl/aux_/preprocessor/repeat.hpp>
+	<boost/mpl/aux_/preprocessor/ext_params.hpp>
+	<boost/mpl/aux_/preprocessor/params.hpp>
+	<boost/mpl/aux_/preprocessor/enum.hpp>
+	<boost/mpl/aux_/preprocessor/add.hpp>
+	<boost/mpl/aux_/preprocessor/sub.hpp>
+	<boost/mpl/aux_/config/ctps.hpp>
+	<boost/mpl/aux_/config/eti.hpp>
+	<boost/mpl/aux_/config/msvc.hpp>
+	<boost/mpl/aux_/config/workaround.hpp>
+	<boost/preprocessor/dec.hpp>
+	<boost/preprocessor/inc.hpp>
+	<boost/preprocessor/iterate.hpp>
+	<boost/preprocessor/cat.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\numeric_cast.hpp
+	<boost/mpl/aux_/config/msvc.hpp>
+	<boost/mpl/aux_/config/workaround.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\tag.hpp
+	<boost/mpl/eval_if.hpp>
+	<boost/mpl/void.hpp>
+	<boost/mpl/aux_/has_tag.hpp>
+	<boost/mpl/aux_/config/eti.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\aux_\has_tag.hpp
+	<boost/mpl/has_xxx.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\aux_\numeric_cast_utils.hpp
+	<boost/mpl/numeric_cast.hpp>
+	<boost/mpl/apply_wrap.hpp>
+	<boost/mpl/aux_/config/forwarding.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\aux_\config\forwarding.hpp
+	<boost/mpl/aux_/config/workaround.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\aux_\msvc_eti_base.hpp
+	<boost/mpl/aux_/is_msvc_eti_arg.hpp>
+	<boost/mpl/aux_/config/eti.hpp>
+	<boost/mpl/aux_/config/gcc.hpp>
+	<boost/mpl/aux_/config/workaround.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\aux_\is_msvc_eti_arg.hpp
+	<boost/mpl/aux_/yes_no.hpp>
+	<boost/mpl/aux_/config/eti.hpp>
+	<boost/mpl/aux_/config/static_constant.hpp>
+
+1216826127 d:\lib\boost_1_52_0\boost\numeric\conversion\detail\int_float_mixture.hpp
+	"boost/config.hpp"
+	"boost/limits.hpp"
+	"boost/numeric/conversion/int_float_mixture_enum.hpp"
+	"boost/numeric/conversion/detail/meta.hpp"
+	"boost/mpl/integral_c.hpp"
+
+1216826127 d:\lib\boost_1_52_0\boost\numeric\conversion\int_float_mixture_enum.hpp
+
+1216826127 d:\lib\boost_1_52_0\boost\numeric\conversion\detail\sign_mixture.hpp
+	"boost/config.hpp"
+	"boost/limits.hpp"
+	"boost/numeric/conversion/sign_mixture_enum.hpp"
+	"boost/numeric/conversion/detail/meta.hpp"
+	"boost/mpl/integral_c.hpp"
+
+1216826127 d:\lib\boost_1_52_0\boost\numeric\conversion\sign_mixture_enum.hpp
+
+1216826127 d:\lib\boost_1_52_0\boost\numeric\conversion\detail\udt_builtin_mixture.hpp
+	"boost/type_traits/is_arithmetic.hpp"
+	"boost/numeric/conversion/udt_builtin_mixture_enum.hpp"
+	"boost/numeric/conversion/detail/meta.hpp"
+	"boost/mpl/integral_c.hpp"
+
+1216826127 d:\lib\boost_1_52_0\boost\numeric\conversion\udt_builtin_mixture_enum.hpp
+
+1216826127 d:\lib\boost_1_52_0\boost\numeric\conversion\detail\is_subranged.hpp
+	"boost/config.hpp"
+	"boost/limits.hpp"
+	"boost/mpl/int.hpp"
+	"boost/mpl/multiplies.hpp"
+	"boost/mpl/less.hpp"
+	"boost/mpl/equal_to.hpp"
+	"boost/type_traits/is_same.hpp"
+	"boost/numeric/conversion/detail/meta.hpp"
+	"boost/numeric/conversion/detail/int_float_mixture.hpp"
+	"boost/numeric/conversion/detail/sign_mixture.hpp"
+	"boost/numeric/conversion/detail/udt_builtin_mixture.hpp"
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\multiplies.hpp
+	<boost/mpl/times.hpp>
+	<boost/mpl/aux_/na_spec.hpp>
+	<boost/mpl/aux_/lambda_support.hpp>
+	<boost/mpl/aux_/preprocessor/default_params.hpp>
+	<boost/mpl/aux_/preprocessor/params.hpp>
+	<boost/mpl/aux_/config/ctps.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\times.hpp
+	<boost/mpl/aux_/arithmetic_op.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\aux_\arithmetic_op.hpp
+	<boost/mpl/integral_c.hpp>
+	<boost/mpl/aux_/largest_int.hpp>
+	<boost/mpl/aux_/value_wknd.hpp>
+	<boost/mpl/aux_/numeric_op.hpp>
+	<boost/mpl/aux_/config/static_constant.hpp>
+	<boost/mpl/aux_/config/use_preprocessed.hpp>
+	<boost/mpl/aux_/include_preprocessed.hpp>
+	<boost/mpl/aux_/config/workaround.hpp>
+	<boost/preprocessor/cat.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\aux_\largest_int.hpp
+	<boost/mpl/if.hpp>
+	<boost/mpl/int.hpp>
+	<boost/mpl/aux_/config/integral.hpp>
+	<boost/config.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\less.hpp
+	<boost/mpl/aux_/comparison_op.hpp>
+
+1216826127 d:\lib\boost_1_52_0\boost\numeric\conversion\detail\converter.hpp
+	<functional>
+	"boost/numeric/conversion/detail/meta.hpp"
+	"boost/numeric/conversion/detail/conversion_traits.hpp"
+	"boost/numeric/conversion/bounds.hpp"
+	"boost/type_traits/is_same.hpp"
+	"boost/mpl/integral_c.hpp"
+
+1216826127 d:\lib\boost_1_52_0\boost\numeric\conversion\bounds.hpp
+	"boost/numeric/conversion/detail/bounds.hpp"
+
+1216826127 d:\lib\boost_1_52_0\boost\numeric\conversion\detail\bounds.hpp
+	"boost/limits.hpp"
+	"boost/config.hpp"
+	"boost/mpl/if.hpp"
+
+1317922037 d:\lib\boost_1_52_0\boost\numeric\conversion\numeric_cast_traits.hpp
+	<boost/numeric/conversion/converter_policies.hpp>
+	<boost/cstdint.hpp>
+	<boost/numeric/conversion/detail/numeric_cast_traits.hpp>
+
+1328146972 d:\lib\boost_1_52_0\boost\numeric\conversion\detail\numeric_cast_traits.hpp
+	<boost/numeric/conversion/detail/preprocessed/numeric_cast_traits_common.hpp>
+	<boost/numeric/conversion/detail/preprocessed/numeric_cast_traits_long_long.hpp>
+	<boost/preprocessor/seq/elem.hpp>
+	<boost/preprocessor/seq/size.hpp>
+	<boost/preprocessor/iteration/iterate.hpp>
+
+1328146972 d:\lib\boost_1_52_0\boost\numeric\conversion\detail\preprocessed\numeric_cast_traits_common.hpp
+
+1328146972 d:\lib\boost_1_52_0\boost\numeric\conversion\detail\preprocessed\numeric_cast_traits_long_long.hpp
+
+1305634757 d:\lib\boost_1_52_0\boost\math\special_functions\sign.hpp
+	<boost/math/tools/config.hpp>
+	<boost/math/special_functions/math_fwd.hpp>
+	<boost/math/special_functions/detail/fp_traits.hpp>
+
+1337014892 d:\lib\boost_1_52_0\boost\math\tools\config.hpp
+	<boost/config.hpp>
+	<boost/cstdint.hpp>
+	<boost/detail/workaround.hpp>
+	<algorithm>
+	<boost/config/no_tr1/cmath.hpp>
+	<climits>
+	<cfloat>
+	<math.h>
+	<boost/math/tools/user.hpp>
+	<boost/math/special_functions/detail/round_fwd.hpp>
+	<float.h>
+	"boost/type.hpp"
+	"boost/non_type.hpp"
+	<boost/detail/fenv.hpp>
+
+1216139427 d:\lib\boost_1_52_0\boost\math\tools\user.hpp
+
+1216139427 d:\lib\boost_1_52_0\boost\math\special_functions\detail\round_fwd.hpp
+	<boost/config.hpp>
+
+1348857252 d:\lib\boost_1_52_0\boost\detail\fenv.hpp
+	<boost/config.hpp>
+	<features.h>
+	<bits/fenv.h>
+	<stdio.h>
+	<fenv.h>
+
+1347007399 d:\lib\boost_1_52_0\boost\math\special_functions\math_fwd.hpp
+	<boost/math/special_functions/detail/round_fwd.hpp>
+	<boost/math/tools/promotion.hpp>
+	<boost/math/policies/policy.hpp>
+	<boost/mpl/comparison.hpp>
+	<boost/config/no_tr1/complex.hpp>
+
+1294507986 d:\lib\boost_1_52_0\boost\math\tools\promotion.hpp
+	<boost/math/tools/config.hpp>
+	<boost/type_traits/is_floating_point.hpp>
+	<boost/type_traits/is_integral.hpp>
+	<boost/type_traits/is_convertible.hpp>
+	<boost/type_traits/is_same.hpp>
+	<boost/type_traits/remove_cv.hpp>
+	<boost/mpl/if.hpp>
+	<boost/mpl/and.hpp>
+	<boost/mpl/or.hpp>
+	<boost/mpl/not.hpp>
+	<boost/static_assert.hpp>
+
+1206222355 d:\lib\boost_1_52_0\boost\type_traits\is_floating_point.hpp
+	<boost/type_traits/detail/bool_trait_def.hpp>
+	<boost/type_traits/detail/bool_trait_undef.hpp>
+
+1347007399 d:\lib\boost_1_52_0\boost\math\policies\policy.hpp
+	<boost/mpl/list.hpp>
+	<boost/mpl/contains.hpp>
+	<boost/mpl/if.hpp>
+	<boost/mpl/find_if.hpp>
+	<boost/mpl/remove_if.hpp>
+	<boost/mpl/vector.hpp>
+	<boost/mpl/push_back.hpp>
+	<boost/mpl/at.hpp>
+	<boost/mpl/size.hpp>
+	<boost/mpl/comparison.hpp>
+	<boost/type_traits/is_same.hpp>
+	<boost/static_assert.hpp>
+	<boost/assert.hpp>
+	<boost/math/tools/config.hpp>
+	<limits>
+	<limits.h>
+	<stdlib.h>
+	<stddef.h>
+	<math.h>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\list.hpp
+	<boost/mpl/limits/list.hpp>
+	<boost/mpl/aux_/na.hpp>
+	<boost/mpl/aux_/config/preprocessor.hpp>
+	<boost/preprocessor/inc.hpp>
+	<boost/preprocessor/cat.hpp>
+	<boost/preprocessor/stringize.hpp>
+	<boost/mpl/aux_/config/use_preprocessed.hpp>
+	<boost/mpl/aux_/include_preprocessed.hpp>
+	<boost/mpl/limits/list.hpp>
+	<boost/mpl/aux_/sequence_wrapper.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\limits\list.hpp
+
+1223707560 d:\lib\boost_1_52_0\boost\mpl\aux_\sequence_wrapper.hpp
+	<boost/mpl/aux_/config/ctps.hpp>
+	<boost/mpl/aux_/config/static_constant.hpp>
+	<boost/mpl/aux_/nttp_decl.hpp>
+	<boost/preprocessor/arithmetic/sub.hpp>
+	<boost/preprocessor/tuple/elem.hpp>
+	<boost/preprocessor/enum_params_with_a_default.hpp>
+	<boost/preprocessor/enum_params.hpp>
+	<boost/preprocessor/enum.hpp>
+	<boost/preprocessor/repeat.hpp>
+	<boost/preprocessor/comma_if.hpp>
+	<boost/preprocessor/iterate.hpp>
+	<boost/mpl/aux_/count_args.hpp>
+
+1090899814 d:\lib\boost_1_52_0\boost\preprocessor\enum_params_with_a_default.hpp
+	<boost/preprocessor/repetition/enum_params_with_a_default.hpp>
+
+1095090689 d:\lib\boost_1_52_0\boost\preprocessor\repetition\enum_params_with_a_default.hpp
+	<boost/preprocessor/config/config.hpp>
+	<boost/preprocessor/facilities/intercept.hpp>
+	<boost/preprocessor/repetition/enum_binary_params.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\contains.hpp
+	<boost/mpl/contains_fwd.hpp>
+	<boost/mpl/sequence_tag.hpp>
+	<boost/mpl/aux_/contains_impl.hpp>
+	<boost/mpl/aux_/na_spec.hpp>
+	<boost/mpl/aux_/lambda_support.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\contains_fwd.hpp
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\sequence_tag.hpp
+	<boost/mpl/sequence_tag_fwd.hpp>
+	<boost/mpl/aux_/has_tag.hpp>
+	<boost/mpl/aux_/has_begin.hpp>
+	<boost/mpl/aux_/na_spec.hpp>
+	<boost/mpl/aux_/is_msvc_eti_arg.hpp>
+	<boost/mpl/aux_/config/eti.hpp>
+	<boost/mpl/aux_/yes_no.hpp>
+	<boost/mpl/aux_/config/workaround.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\sequence_tag_fwd.hpp
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\aux_\has_begin.hpp
+	<boost/mpl/has_xxx.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\aux_\contains_impl.hpp
+	<boost/mpl/contains_fwd.hpp>
+	<boost/mpl/begin_end.hpp>
+	<boost/mpl/find.hpp>
+	<boost/mpl/not.hpp>
+	<boost/mpl/aux_/traits_lambda_spec.hpp>
+	<boost/mpl/aux_/config/forwarding.hpp>
+	<boost/mpl/aux_/config/static_constant.hpp>
+	<boost/type_traits/is_same.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\begin_end.hpp
+	<boost/mpl/begin_end_fwd.hpp>
+	<boost/mpl/aux_/begin_end_impl.hpp>
+	<boost/mpl/sequence_tag.hpp>
+	<boost/mpl/aux_/na_spec.hpp>
+	<boost/mpl/aux_/lambda_support.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\begin_end_fwd.hpp
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\aux_\begin_end_impl.hpp
+	<boost/mpl/begin_end_fwd.hpp>
+	<boost/mpl/sequence_tag_fwd.hpp>
+	<boost/mpl/void.hpp>
+	<boost/mpl/eval_if.hpp>
+	<boost/mpl/aux_/has_begin.hpp>
+	<boost/mpl/aux_/na.hpp>
+	<boost/mpl/aux_/traits_lambda_spec.hpp>
+	<boost/mpl/aux_/config/eti.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\aux_\traits_lambda_spec.hpp
+	<boost/mpl/sequence_tag_fwd.hpp>
+	<boost/mpl/void.hpp>
+	<boost/mpl/aux_/preprocessor/params.hpp>
+	<boost/mpl/aux_/config/lambda.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\find.hpp
+	<boost/mpl/find_if.hpp>
+	<boost/mpl/same_as.hpp>
+	<boost/mpl/aux_/na_spec.hpp>
+	<boost/mpl/aux_/lambda_support.hpp>
+
+1223709725 d:\lib\boost_1_52_0\boost\mpl\find_if.hpp
+	<boost/mpl/aux_/find_if_pred.hpp>
+	<boost/mpl/arg.hpp>
+	<boost/mpl/iter_fold_if.hpp>
+	<boost/mpl/aux_/common_name_wknd.hpp>
+	<boost/mpl/aux_/na_spec.hpp>
+	<boost/mpl/aux_/lambda_support.hpp>
+
+1094139697 d:\lib\boost_1_52_0\boost\mpl\aux_\find_if_pred.hpp
+	<boost/mpl/aux_/iter_apply.hpp>
+	<boost/mpl/not.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\aux_\iter_apply.hpp
+	<boost/mpl/apply.hpp>
+	<boost/mpl/deref.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\deref.hpp
+	<boost/mpl/aux_/msvc_type.hpp>
+	<boost/mpl/aux_/na_spec.hpp>
+	<boost/mpl/aux_/lambda_support.hpp>
+	<boost/mpl/aux_/config/eti.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\aux_\msvc_type.hpp
+	<boost/mpl/aux_/config/eti.hpp>
+	<boost/mpl/aux_/is_msvc_eti_arg.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\iter_fold_if.hpp
+	<boost/mpl/begin_end.hpp>
+	<boost/mpl/logical.hpp>
+	<boost/mpl/always.hpp>
+	<boost/mpl/eval_if.hpp>
+	<boost/mpl/if.hpp>
+	<boost/mpl/pair.hpp>
+	<boost/mpl/apply.hpp>
+	<boost/mpl/aux_/iter_fold_if_impl.hpp>
+	<boost/mpl/aux_/na_spec.hpp>
+	<boost/mpl/aux_/lambda_support.hpp>
+	<boost/mpl/aux_/config/forwarding.hpp>
+	<boost/mpl/aux_/config/workaround.hpp>
+	<boost/type_traits/is_same.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\pair.hpp
+	<boost/mpl/aux_/msvc_eti_base.hpp>
+	<boost/mpl/aux_/na_spec.hpp>
+	<boost/mpl/aux_/lambda_support.hpp>
+	<boost/mpl/aux_/config/eti.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\aux_\iter_fold_if_impl.hpp
+	<boost/mpl/identity.hpp>
+	<boost/mpl/next.hpp>
+	<boost/mpl/if.hpp>
+	<boost/mpl/apply.hpp>
+	<boost/mpl/aux_/value_wknd.hpp>
+	<boost/mpl/aux_/config/use_preprocessed.hpp>
+	<boost/mpl/aux_/include_preprocessed.hpp>
+	<boost/mpl/limits/unrolling.hpp>
+	<boost/preprocessor/arithmetic/sub.hpp>
+	<boost/preprocessor/repeat.hpp>
+	<boost/preprocessor/inc.hpp>
+	<boost/preprocessor/dec.hpp>
+	<boost/preprocessor/cat.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\limits\unrolling.hpp
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\same_as.hpp
+	<boost/mpl/not.hpp>
+	<boost/mpl/aux_/lambda_spec.hpp>
+	<boost/mpl/aux_/config/forwarding.hpp>
+	<boost/type_traits/is_same.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\aux_\lambda_spec.hpp
+	<boost/mpl/void.hpp>
+	<boost/mpl/lambda_fwd.hpp>
+	<boost/mpl/int_fwd.hpp>
+	<boost/mpl/aux_/preprocessor/params.hpp>
+	<boost/mpl/aux_/lambda_arity_param.hpp>
+	<boost/mpl/aux_/config/lambda.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\remove_if.hpp
+	<boost/mpl/fold.hpp>
+	<boost/mpl/reverse_fold.hpp>
+	<boost/mpl/eval_if.hpp>
+	<boost/mpl/identity.hpp>
+	<boost/mpl/protect.hpp>
+	<boost/mpl/lambda.hpp>
+	<boost/mpl/apply.hpp>
+	<boost/mpl/aux_/inserter_algorithm.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\fold.hpp
+	<boost/mpl/begin_end.hpp>
+	<boost/mpl/O1_size.hpp>
+	<boost/mpl/aux_/fold_impl.hpp>
+	<boost/mpl/aux_/na_spec.hpp>
+	<boost/mpl/aux_/lambda_support.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\o1_size.hpp
+	<boost/mpl/O1_size_fwd.hpp>
+	<boost/mpl/sequence_tag.hpp>
+	<boost/mpl/aux_/O1_size_impl.hpp>
+	<boost/mpl/aux_/na_spec.hpp>
+	<boost/mpl/aux_/lambda_support.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\o1_size_fwd.hpp
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\aux_\o1_size_impl.hpp
+	<boost/mpl/O1_size_fwd.hpp>
+	<boost/mpl/long.hpp>
+	<boost/mpl/if.hpp>
+	<boost/mpl/aux_/has_size.hpp>
+	<boost/mpl/aux_/config/forwarding.hpp>
+	<boost/mpl/aux_/config/static_constant.hpp>
+	<boost/mpl/aux_/config/msvc.hpp>
+	<boost/mpl/aux_/config/workaround.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\long.hpp
+	<boost/mpl/long_fwd.hpp>
+	<boost/mpl/aux_/integral_wrapper.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\long_fwd.hpp
+	<boost/mpl/aux_/adl_barrier.hpp>
+	<boost/mpl/aux_/nttp_decl.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\aux_\has_size.hpp
+	<boost/mpl/has_xxx.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\aux_\fold_impl.hpp
+	<boost/mpl/next_prior.hpp>
+	<boost/mpl/apply.hpp>
+	<boost/mpl/deref.hpp>
+	<boost/mpl/aux_/config/ctps.hpp>
+	<boost/mpl/if.hpp>
+	<boost/type_traits/is_same.hpp>
+	<boost/mpl/aux_/config/use_preprocessed.hpp>
+	<boost/mpl/aux_/include_preprocessed.hpp>
+	<boost/mpl/aux_/fold_impl_body.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\aux_\fold_impl_body.hpp
+	<boost/mpl/limits/unrolling.hpp>
+	<boost/mpl/aux_/preprocessor/repeat.hpp>
+	<boost/mpl/aux_/config/workaround.hpp>
+	<boost/mpl/aux_/config/ctps.hpp>
+	<boost/mpl/aux_/nttp_decl.hpp>
+	<boost/mpl/aux_/config/eti.hpp>
+	<boost/preprocessor/iterate.hpp>
+	<boost/preprocessor/dec.hpp>
+	<boost/preprocessor/cat.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\reverse_fold.hpp
+	<boost/mpl/begin_end.hpp>
+	<boost/mpl/O1_size.hpp>
+	<boost/mpl/arg.hpp>
+	<boost/mpl/aux_/reverse_fold_impl.hpp>
+	<boost/mpl/aux_/na_spec.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\aux_\reverse_fold_impl.hpp
+	<boost/mpl/next_prior.hpp>
+	<boost/mpl/deref.hpp>
+	<boost/mpl/apply.hpp>
+	<boost/mpl/aux_/config/ctps.hpp>
+	<boost/mpl/if.hpp>
+	<boost/type_traits/is_same.hpp>
+	<boost/mpl/aux_/config/use_preprocessed.hpp>
+	<boost/mpl/aux_/include_preprocessed.hpp>
+	<boost/mpl/aux_/reverse_fold_impl_body.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\aux_\reverse_fold_impl_body.hpp
+	<boost/mpl/limits/unrolling.hpp>
+	<boost/mpl/aux_/preprocessor/repeat.hpp>
+	<boost/mpl/aux_/config/ctps.hpp>
+	<boost/mpl/aux_/nttp_decl.hpp>
+	<boost/preprocessor/arithmetic/sub.hpp>
+	<boost/preprocessor/iterate.hpp>
+	<boost/preprocessor/dec.hpp>
+	<boost/preprocessor/inc.hpp>
+	<boost/preprocessor/cat.hpp>
+
+1250572613 d:\lib\boost_1_52_0\boost\mpl\aux_\inserter_algorithm.hpp
+	<boost/mpl/back_inserter.hpp>
+	<boost/mpl/front_inserter.hpp>
+	<boost/mpl/push_back.hpp>
+	<boost/mpl/push_front.hpp>
+	<boost/mpl/back_inserter.hpp>
+	<boost/mpl/front_inserter.hpp>
+	<boost/mpl/clear.hpp>
+	<boost/mpl/eval_if.hpp>
+	<boost/mpl/if.hpp>
+	<boost/mpl/aux_/na.hpp>
+	<boost/mpl/aux_/common_name_wknd.hpp>
+	<boost/mpl/aux_/na_spec.hpp>
+	<boost/mpl/aux_/preprocessor/params.hpp>
+	<boost/mpl/aux_/preprocessor/default_params.hpp>
+	<boost/mpl/aux_/config/ctps.hpp>
+	<boost/preprocessor/arithmetic/dec.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\back_inserter.hpp
+	<boost/mpl/push_back.hpp>
+	<boost/mpl/inserter.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\push_back.hpp
+	<boost/mpl/push_back_fwd.hpp>
+	<boost/mpl/aux_/push_back_impl.hpp>
+	<boost/mpl/sequence_tag.hpp>
+	<boost/mpl/aux_/na_spec.hpp>
+	<boost/mpl/aux_/lambda_support.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\push_back_fwd.hpp
+
+1250754616 d:\lib\boost_1_52_0\boost\mpl\aux_\push_back_impl.hpp
+	<boost/mpl/push_back_fwd.hpp>
+	<boost/mpl/assert.hpp>
+	<boost/mpl/aux_/has_type.hpp>
+	<boost/mpl/aux_/traits_lambda_spec.hpp>
+	<boost/mpl/aux_/config/forwarding.hpp>
+	<boost/mpl/aux_/config/static_constant.hpp>
+	<boost/type_traits/is_same.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\inserter.hpp
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\front_inserter.hpp
+	<boost/mpl/push_front.hpp>
+	<boost/mpl/inserter.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\push_front.hpp
+	<boost/mpl/push_front_fwd.hpp>
+	<boost/mpl/aux_/push_front_impl.hpp>
+	<boost/mpl/sequence_tag.hpp>
+	<boost/mpl/aux_/na_spec.hpp>
+	<boost/mpl/aux_/lambda_support.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\push_front_fwd.hpp
+
+1250754616 d:\lib\boost_1_52_0\boost\mpl\aux_\push_front_impl.hpp
+	<boost/mpl/push_front_fwd.hpp>
+	<boost/mpl/assert.hpp>
+	<boost/mpl/aux_/has_type.hpp>
+	<boost/mpl/aux_/traits_lambda_spec.hpp>
+	<boost/mpl/aux_/config/forwarding.hpp>
+	<boost/mpl/aux_/config/static_constant.hpp>
+	<boost/type_traits/is_same.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\clear.hpp
+	<boost/mpl/clear_fwd.hpp>
+	<boost/mpl/aux_/clear_impl.hpp>
+	<boost/mpl/sequence_tag.hpp>
+	<boost/mpl/aux_/na_spec.hpp>
+	<boost/mpl/aux_/lambda_support.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\clear_fwd.hpp
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\aux_\clear_impl.hpp
+	<boost/mpl/clear_fwd.hpp>
+	<boost/mpl/aux_/traits_lambda_spec.hpp>
+	<boost/mpl/aux_/config/eti.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\vector.hpp
+	<boost/mpl/limits/vector.hpp>
+	<boost/mpl/aux_/na.hpp>
+	<boost/mpl/aux_/config/preprocessor.hpp>
+	<boost/preprocessor/inc.hpp>
+	<boost/preprocessor/cat.hpp>
+	<boost/preprocessor/stringize.hpp>
+	<boost/mpl/aux_/config/use_preprocessed.hpp>
+	<boost/mpl/aux_/include_preprocessed.hpp>
+	<boost/mpl/limits/vector.hpp>
+	<boost/mpl/aux_/sequence_wrapper.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\limits\vector.hpp
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\at.hpp
+	<boost/mpl/at_fwd.hpp>
+	<boost/mpl/aux_/at_impl.hpp>
+	<boost/mpl/long.hpp>
+	<boost/mpl/sequence_tag.hpp>
+	<boost/mpl/aux_/na_spec.hpp>
+	<boost/mpl/aux_/lambda_support.hpp>
+	<boost/mpl/aux_/nttp_decl.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\at_fwd.hpp
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\aux_\at_impl.hpp
+	<boost/mpl/begin_end.hpp>
+	<boost/mpl/advance.hpp>
+	<boost/mpl/deref.hpp>
+	<boost/mpl/aux_/traits_lambda_spec.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\advance.hpp
+	<boost/mpl/advance_fwd.hpp>
+	<boost/mpl/less.hpp>
+	<boost/mpl/negate.hpp>
+	<boost/mpl/long.hpp>
+	<boost/mpl/if.hpp>
+	<boost/mpl/tag.hpp>
+	<boost/mpl/apply_wrap.hpp>
+	<boost/mpl/aux_/advance_forward.hpp>
+	<boost/mpl/aux_/advance_backward.hpp>
+	<boost/mpl/aux_/value_wknd.hpp>
+	<boost/mpl/aux_/na_spec.hpp>
+	<boost/mpl/aux_/nttp_decl.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\advance_fwd.hpp
+	<boost/mpl/aux_/common_name_wknd.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\negate.hpp
+	<boost/mpl/integral_c.hpp>
+	<boost/mpl/aux_/msvc_eti_base.hpp>
+	<boost/mpl/aux_/na_spec.hpp>
+	<boost/mpl/aux_/lambda_support.hpp>
+	<boost/mpl/aux_/config/eti.hpp>
+	<boost/mpl/aux_/config/integral.hpp>
+	<boost/mpl/aux_/config/static_constant.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\aux_\advance_forward.hpp
+	<boost/mpl/next.hpp>
+	<boost/mpl/apply_wrap.hpp>
+	<boost/mpl/aux_/config/use_preprocessed.hpp>
+	<boost/mpl/aux_/include_preprocessed.hpp>
+	<boost/mpl/limits/unrolling.hpp>
+	<boost/mpl/aux_/nttp_decl.hpp>
+	<boost/mpl/aux_/config/eti.hpp>
+	<boost/preprocessor/iterate.hpp>
+	<boost/preprocessor/cat.hpp>
+	<boost/preprocessor/inc.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\aux_\advance_backward.hpp
+	<boost/mpl/prior.hpp>
+	<boost/mpl/apply_wrap.hpp>
+	<boost/mpl/aux_/config/use_preprocessed.hpp>
+	<boost/mpl/aux_/include_preprocessed.hpp>
+	<boost/mpl/limits/unrolling.hpp>
+	<boost/mpl/aux_/nttp_decl.hpp>
+	<boost/mpl/aux_/config/eti.hpp>
+	<boost/preprocessor/iterate.hpp>
+	<boost/preprocessor/cat.hpp>
+	<boost/preprocessor/inc.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\prior.hpp
+	<boost/mpl/next_prior.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\size.hpp
+	<boost/mpl/size_fwd.hpp>
+	<boost/mpl/sequence_tag.hpp>
+	<boost/mpl/aux_/size_impl.hpp>
+	<boost/mpl/aux_/na_spec.hpp>
+	<boost/mpl/aux_/lambda_support.hpp>
+	<boost/mpl/aux_/msvc_eti_base.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\size_fwd.hpp
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\aux_\size_impl.hpp
+	<boost/mpl/size_fwd.hpp>
+	<boost/mpl/begin_end.hpp>
+	<boost/mpl/distance.hpp>
+	<boost/mpl/aux_/traits_lambda_spec.hpp>
+	<boost/mpl/aux_/config/workaround.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\distance.hpp
+	<boost/mpl/distance_fwd.hpp>
+	<boost/mpl/iter_fold.hpp>
+	<boost/mpl/iterator_range.hpp>
+	<boost/mpl/long.hpp>
+	<boost/mpl/next.hpp>
+	<boost/mpl/tag.hpp>
+	<boost/mpl/apply_wrap.hpp>
+	<boost/mpl/aux_/msvc_eti_base.hpp>
+	<boost/mpl/aux_/value_wknd.hpp>
+	<boost/mpl/aux_/na_spec.hpp>
+	<boost/mpl/aux_/config/forwarding.hpp>
+	<boost/mpl/aux_/config/static_constant.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\distance_fwd.hpp
+	<boost/mpl/aux_/common_name_wknd.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\iter_fold.hpp
+	<boost/mpl/begin_end.hpp>
+	<boost/mpl/O1_size.hpp>
+	<boost/mpl/lambda.hpp>
+	<boost/mpl/aux_/iter_fold_impl.hpp>
+	<boost/mpl/aux_/na_spec.hpp>
+	<boost/mpl/aux_/lambda_support.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\aux_\iter_fold_impl.hpp
+	<boost/mpl/next_prior.hpp>
+	<boost/mpl/apply.hpp>
+	<boost/mpl/aux_/config/ctps.hpp>
+	<boost/mpl/if.hpp>
+	<boost/type_traits/is_same.hpp>
+	<boost/mpl/aux_/config/use_preprocessed.hpp>
+	<boost/mpl/aux_/include_preprocessed.hpp>
+	<boost/mpl/aux_/fold_impl_body.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\iterator_range.hpp
+	<boost/mpl/aux_/na_spec.hpp>
+	<boost/mpl/aux_/lambda_support.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\comparison.hpp
+	<boost/mpl/equal_to.hpp>
+	<boost/mpl/not_equal_to.hpp>
+	<boost/mpl/less.hpp>
+	<boost/mpl/greater.hpp>
+	<boost/mpl/less_equal.hpp>
+	<boost/mpl/greater_equal.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\not_equal_to.hpp
+	<boost/mpl/aux_/comparison_op.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\greater.hpp
+	<boost/mpl/aux_/comparison_op.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\less_equal.hpp
+	<boost/mpl/aux_/comparison_op.hpp>
+
+1223705942 d:\lib\boost_1_52_0\boost\mpl\greater_equal.hpp
+	<boost/mpl/aux_/comparison_op.hpp>
+
+1129739920 d:\lib\boost_1_52_0\boost\config\no_tr1\complex.hpp
+	<complex>
+
+1325503301 d:\lib\boost_1_52_0\boost\math\special_functions\detail\fp_traits.hpp
+	<cstring>
+	<boost/assert.hpp>
+	<boost/cstdint.hpp>
+	<boost/detail/endian.hpp>
+	<boost/static_assert.hpp>
+	<boost/type_traits/is_floating_point.hpp>
+
+1347007399 d:\lib\boost_1_52_0\boost\math\special_functions\fpclassify.hpp
+	<math.h>
+	<boost/config/no_tr1/cmath.hpp>
+	<boost/limits.hpp>
+	<boost/math/tools/real_cast.hpp>
+	<boost/type_traits/is_floating_point.hpp>
+	<boost/math/special_functions/math_fwd.hpp>
+	<boost/math/special_functions/detail/fp_traits.hpp>
+	<float.h>
+
+1216139427 d:\lib\boost_1_52_0\boost\math\tools\real_cast.hpp
+
+1349091124 d:\lib\boost_1_52_0\boost\container\container_fwd.hpp
+	<utility>
+	<memory>
+	<functional>
+	<iosfwd>
+	<string>
+
+1355419679 d:\mypro\cb_adolc_pf\src\commonstructure.h
+
+1355458269 source:d:\mypro\cb_adolc_pf\src\ymatrix.cpp
+	"ymatrix.h"
+
+1355458218 d:\mypro\cb_adolc_pf\src\ymatrix.h
+	"ipsotextreader.h"
+	<Eigen/Sparse>
+	<boost/shared_ptr.hpp>
+	<cmath>
+	<list>
+
+1352150569 d:\lib\eigen\eigen\sparse
+	"SparseCore"
+	"OrderingMethods"
+	"SparseCholesky"
+	"IterativeLinearSolvers"
+
+1352150569 d:\lib\eigen\eigen\sparsecore
+	"Core"
+	"src/Core/util/DisableStupidWarnings.h"
+	<vector>
+	<map>
+	<cstdlib>
+	<cstring>
+	<algorithm>
+	"src/SparseCore/SparseUtil.h"
+	"src/SparseCore/SparseMatrixBase.h"
+	"src/SparseCore/CompressedStorage.h"
+	"src/SparseCore/AmbiVector.h"
+	"src/SparseCore/SparseMatrix.h"
+	"src/SparseCore/MappedSparseMatrix.h"
+	"src/SparseCore/SparseVector.h"
+	"src/SparseCore/CoreIterators.h"
+	"src/SparseCore/SparseBlock.h"
+	"src/SparseCore/SparseTranspose.h"
+	"src/SparseCore/SparseCwiseUnaryOp.h"
+	"src/SparseCore/SparseCwiseBinaryOp.h"
+	"src/SparseCore/SparseDot.h"
+	"src/SparseCore/SparsePermutation.h"
+	"src/SparseCore/SparseAssign.h"
+	"src/SparseCore/SparseRedux.h"
+	"src/SparseCore/SparseFuzzy.h"
+	"src/SparseCore/ConservativeSparseSparseProduct.h"
+	"src/SparseCore/SparseSparseProductWithPruning.h"
+	"src/SparseCore/SparseProduct.h"
+	"src/SparseCore/SparseDenseProduct.h"
+	"src/SparseCore/SparseDiagonalProduct.h"
+	"src/SparseCore/SparseTriangularView.h"
+	"src/SparseCore/SparseSelfAdjointView.h"
+	"src/SparseCore/TriangularSolver.h"
+	"src/SparseCore/SparseView.h"
+	"src/Core/util/ReenableStupidWarnings.h"
+
+1352150569 d:\lib\eigen\eigen\core
+	"src/Core/util/DisableStupidWarnings.h"
+	"src/Core/util/Macros.h"
+	<complex>
+	"src/Core/util/MKL_support.h"
+	<malloc.h>
+	<emmintrin.h>
+	<xmmintrin.h>
+	<pmmintrin.h>
+	<tmmintrin.h>
+	<smmintrin.h>
+	<nmmintrin.h>
+	<altivec.h>
+	<arm_neon.h>
+	<omp.h>
+	<cerrno>
+	<cstddef>
+	<cstdlib>
+	<cmath>
+	<cassert>
+	<functional>
+	<iosfwd>
+	<cstring>
+	<string>
+	<limits>
+	<climits>
+	<algorithm>
+	<iostream>
+	<intrin.h>
+	<new>
+	"src/Core/util/Constants.h"
+	"src/Core/util/ForwardDeclarations.h"
+	"src/Core/util/Meta.h"
+	"src/Core/util/XprHelper.h"
+	"src/Core/util/StaticAssert.h"
+	"src/Core/util/Memory.h"
+	"src/Core/NumTraits.h"
+	"src/Core/MathFunctions.h"
+	"src/Core/GenericPacketMath.h"
+	"src/Core/arch/SSE/PacketMath.h"
+	"src/Core/arch/SSE/MathFunctions.h"
+	"src/Core/arch/SSE/Complex.h"
+	"src/Core/arch/AltiVec/PacketMath.h"
+	"src/Core/arch/AltiVec/Complex.h"
+	"src/Core/arch/NEON/PacketMath.h"
+	"src/Core/arch/NEON/Complex.h"
+	"src/Core/arch/Default/Settings.h"
+	"src/Core/Functors.h"
+	"src/Core/DenseCoeffsBase.h"
+	"src/Core/DenseBase.h"
+	"src/Core/MatrixBase.h"
+	"src/Core/EigenBase.h"
+	"src/Core/Assign.h"
+	"src/Core/util/BlasUtil.h"
+	"src/Core/DenseStorage.h"
+	"src/Core/NestByValue.h"
+	"src/Core/ForceAlignedAccess.h"
+	"src/Core/ReturnByValue.h"
+	"src/Core/NoAlias.h"
+	"src/Core/PlainObjectBase.h"
+	"src/Core/Matrix.h"
+	"src/Core/Array.h"
+	"src/Core/CwiseBinaryOp.h"
+	"src/Core/CwiseUnaryOp.h"
+	"src/Core/CwiseNullaryOp.h"
+	"src/Core/CwiseUnaryView.h"
+	"src/Core/SelfCwiseBinaryOp.h"
+	"src/Core/Dot.h"
+	"src/Core/StableNorm.h"
+	"src/Core/MapBase.h"
+	"src/Core/Stride.h"
+	"src/Core/Map.h"
+	"src/Core/Block.h"
+	"src/Core/VectorBlock.h"
+	"src/Core/Transpose.h"
+	"src/Core/DiagonalMatrix.h"
+	"src/Core/Diagonal.h"
+	"src/Core/DiagonalProduct.h"
+	"src/Core/PermutationMatrix.h"
+	"src/Core/Transpositions.h"
+	"src/Core/Redux.h"
+	"src/Core/Visitor.h"
+	"src/Core/Fuzzy.h"
+	"src/Core/IO.h"
+	"src/Core/Swap.h"
+	"src/Core/CommaInitializer.h"
+	"src/Core/Flagged.h"
+	"src/Core/ProductBase.h"
+	"src/Core/GeneralProduct.h"
+	"src/Core/TriangularMatrix.h"
+	"src/Core/SelfAdjointView.h"
+	"src/Core/products/GeneralBlockPanelKernel.h"
+	"src/Core/products/Parallelizer.h"
+	"src/Core/products/CoeffBasedProduct.h"
+	"src/Core/products/GeneralMatrixVector.h"
+	"src/Core/products/GeneralMatrixMatrix.h"
+	"src/Core/SolveTriangular.h"
+	"src/Core/products/GeneralMatrixMatrixTriangular.h"
+	"src/Core/products/SelfadjointMatrixVector.h"
+	"src/Core/products/SelfadjointMatrixMatrix.h"
+	"src/Core/products/SelfadjointProduct.h"
+	"src/Core/products/SelfadjointRank2Update.h"
+	"src/Core/products/TriangularMatrixVector.h"
+	"src/Core/products/TriangularMatrixMatrix.h"
+	"src/Core/products/TriangularSolverMatrix.h"
+	"src/Core/products/TriangularSolverVector.h"
+	"src/Core/BandMatrix.h"
+	"src/Core/BooleanRedux.h"
+	"src/Core/Select.h"
+	"src/Core/VectorwiseOp.h"
+	"src/Core/Random.h"
+	"src/Core/Replicate.h"
+	"src/Core/Reverse.h"
+	"src/Core/ArrayBase.h"
+	"src/Core/ArrayWrapper.h"
+	"src/Core/products/GeneralMatrixMatrix_MKL.h"
+	"src/Core/products/GeneralMatrixVector_MKL.h"
+	"src/Core/products/GeneralMatrixMatrixTriangular_MKL.h"
+	"src/Core/products/SelfadjointMatrixMatrix_MKL.h"
+	"src/Core/products/SelfadjointMatrixVector_MKL.h"
+	"src/Core/products/TriangularMatrixMatrix_MKL.h"
+	"src/Core/products/TriangularMatrixVector_MKL.h"
+	"src/Core/products/TriangularSolverMatrix_MKL.h"
+	"src/Core/Assign_MKL.h"
+	"src/Core/GlobalFunctions.h"
+	"src/Core/util/ReenableStupidWarnings.h"
+	"Eigen2Support"
+
+1352150569 d:\lib\eigen\eigen\src\core\util\disablestupidwarnings.h
+
+1352150569 d:\lib\eigen\eigen\src\core\util\macros.h
+	<cstdlib>
+	<iostream>
+
+1352150569 d:\lib\eigen\eigen\src\core\util\mkl_support.h
+	<mkl.h>
+	<mkl_lapacke.h>
+
+1352150569 d:\lib\eigen\eigen\src\core\util\constants.h
+
+1352150569 d:\lib\eigen\eigen\src\core\util\forwarddeclarations.h
+
+1352150569 d:\lib\eigen\eigen\src\core\util\meta.h
+
+1352150569 d:\lib\eigen\eigen\src\core\util\xprhelper.h
+
+1352150569 d:\lib\eigen\eigen\src\core\util\staticassert.h
+
+1352150569 d:\lib\eigen\eigen\src\core\util\memory.h
+
+1352150569 d:\lib\eigen\eigen\src\core\numtraits.h
+
+1352150569 d:\lib\eigen\eigen\src\core\mathfunctions.h
+
+1352150569 d:\lib\eigen\eigen\src\core\genericpacketmath.h
+
+1352150569 d:\lib\eigen\eigen\src\core\arch\sse\packetmath.h
+
+1352150569 d:\lib\eigen\eigen\src\core\arch\sse\mathfunctions.h
+
+1352150569 d:\lib\eigen\eigen\src\core\arch\sse\complex.h
+
+1352150569 d:\lib\eigen\eigen\src\core\arch\altivec\packetmath.h
+
+1352150569 d:\lib\eigen\eigen\src\core\arch\altivec\complex.h
+
+1352150569 d:\lib\eigen\eigen\src\core\arch\neon\packetmath.h
+
+1352150569 d:\lib\eigen\eigen\src\core\arch\neon\complex.h
+
+1352150569 d:\lib\eigen\eigen\src\core\arch\default\settings.h
+
+1352150569 d:\lib\eigen\eigen\src\core\functors.h
+
+1352150569 d:\lib\eigen\eigen\src\core\densecoeffsbase.h
+
+1352150569 d:\lib\eigen\eigen\src\core\densebase.h
+	"../plugins/BlockMethods.h"
+
+1352150569 d:\lib\eigen\eigen\src\plugins\blockmethods.h
+
+1352150569 d:\lib\eigen\eigen\src\core\matrixbase.h
+	"../plugins/CommonCwiseUnaryOps.h"
+	"../plugins/CommonCwiseBinaryOps.h"
+	"../plugins/MatrixCwiseUnaryOps.h"
+	"../plugins/MatrixCwiseBinaryOps.h"
+
+1352150569 d:\lib\eigen\eigen\src\plugins\commoncwiseunaryops.h
+
+1352150569 d:\lib\eigen\eigen\src\plugins\commoncwisebinaryops.h
+
+1352150569 d:\lib\eigen\eigen\src\plugins\matrixcwiseunaryops.h
+
+1352150569 d:\lib\eigen\eigen\src\plugins\matrixcwisebinaryops.h
+
+1352150569 d:\lib\eigen\eigen\src\core\eigenbase.h
+
+1352150569 d:\lib\eigen\eigen\src\core\assign.h
+
+1352150569 d:\lib\eigen\eigen\src\core\util\blasutil.h
+
+1352150569 d:\lib\eigen\eigen\src\core\densestorage.h
+
+1352150569 d:\lib\eigen\eigen\src\core\nestbyvalue.h
+
+1352150569 d:\lib\eigen\eigen\src\core\forcealignedaccess.h
+
+1352150569 d:\lib\eigen\eigen\src\core\returnbyvalue.h
+
+1352150569 d:\lib\eigen\eigen\src\core\noalias.h
+
+1352150569 d:\lib\eigen\eigen\src\core\plainobjectbase.h
+
+1352150569 d:\lib\eigen\eigen\src\core\matrix.h
+
+1352150569 d:\lib\eigen\eigen\src\core\array.h
+
+1352150569 d:\lib\eigen\eigen\src\core\cwisebinaryop.h
+
+1352150569 d:\lib\eigen\eigen\src\core\cwiseunaryop.h
+
+1352150569 d:\lib\eigen\eigen\src\core\cwisenullaryop.h
+
+1352150569 d:\lib\eigen\eigen\src\core\cwiseunaryview.h
+
+1352150569 d:\lib\eigen\eigen\src\core\selfcwisebinaryop.h
+
+1352150569 d:\lib\eigen\eigen\src\core\dot.h
+
+1352150569 d:\lib\eigen\eigen\src\core\stablenorm.h
+
+1352150569 d:\lib\eigen\eigen\src\core\mapbase.h
+
+1352150569 d:\lib\eigen\eigen\src\core\stride.h
+
+1352150569 d:\lib\eigen\eigen\src\core\map.h
+
+1352150569 d:\lib\eigen\eigen\src\core\block.h
+
+1352150569 d:\lib\eigen\eigen\src\core\vectorblock.h
+
+1352150569 d:\lib\eigen\eigen\src\core\transpose.h
+
+1352150569 d:\lib\eigen\eigen\src\core\diagonalmatrix.h
+
+1352150569 d:\lib\eigen\eigen\src\core\diagonal.h
+
+1352150569 d:\lib\eigen\eigen\src\core\diagonalproduct.h
+
+1352150569 d:\lib\eigen\eigen\src\core\permutationmatrix.h
+
+1352150569 d:\lib\eigen\eigen\src\core\transpositions.h
+
+1352150569 d:\lib\eigen\eigen\src\core\redux.h
+
+1352150569 d:\lib\eigen\eigen\src\core\visitor.h
+
+1352150569 d:\lib\eigen\eigen\src\core\fuzzy.h
+
+1352150569 d:\lib\eigen\eigen\src\core\io.h
+
+1352150569 d:\lib\eigen\eigen\src\core\swap.h
+
+1352150569 d:\lib\eigen\eigen\src\core\commainitializer.h
+
+1352150569 d:\lib\eigen\eigen\src\core\flagged.h
+
+1352150569 d:\lib\eigen\eigen\src\core\productbase.h
+
+1352150569 d:\lib\eigen\eigen\src\core\generalproduct.h
+
+1352150569 d:\lib\eigen\eigen\src\core\triangularmatrix.h
+
+1352150569 d:\lib\eigen\eigen\src\core\selfadjointview.h
+
+1352150569 d:\lib\eigen\eigen\src\core\products\generalblockpanelkernel.h
+
+1352150569 d:\lib\eigen\eigen\src\core\products\parallelizer.h
+
+1352150569 d:\lib\eigen\eigen\src\core\products\coeffbasedproduct.h
+
+1352150569 d:\lib\eigen\eigen\src\core\products\generalmatrixvector.h
+
+1352150569 d:\lib\eigen\eigen\src\core\products\generalmatrixmatrix.h
+
+1352150569 d:\lib\eigen\eigen\src\core\solvetriangular.h
+
+1352150569 d:\lib\eigen\eigen\src\core\products\generalmatrixmatrixtriangular.h
+
+1352150569 d:\lib\eigen\eigen\src\core\products\selfadjointmatrixvector.h
+
+1352150569 d:\lib\eigen\eigen\src\core\products\selfadjointmatrixmatrix.h
+
+1352150569 d:\lib\eigen\eigen\src\core\products\selfadjointproduct.h
+
+1352150569 d:\lib\eigen\eigen\src\core\products\selfadjointrank2update.h
+
+1352150569 d:\lib\eigen\eigen\src\core\products\triangularmatrixvector.h
+
+1352150569 d:\lib\eigen\eigen\src\core\products\triangularmatrixmatrix.h
+
+1352150569 d:\lib\eigen\eigen\src\core\products\triangularsolvermatrix.h
+
+1352150569 d:\lib\eigen\eigen\src\core\products\triangularsolvervector.h
+
+1352150569 d:\lib\eigen\eigen\src\core\bandmatrix.h
+
+1352150569 d:\lib\eigen\eigen\src\core\booleanredux.h
+
+1352150569 d:\lib\eigen\eigen\src\core\select.h
+
+1352150569 d:\lib\eigen\eigen\src\core\vectorwiseop.h
+
+1352150569 d:\lib\eigen\eigen\src\core\random.h
+
+1352150569 d:\lib\eigen\eigen\src\core\replicate.h
+
+1352150569 d:\lib\eigen\eigen\src\core\reverse.h
+
+1352150569 d:\lib\eigen\eigen\src\core\arraybase.h
+	"../plugins/CommonCwiseUnaryOps.h"
+	"../plugins/MatrixCwiseUnaryOps.h"
+	"../plugins/ArrayCwiseUnaryOps.h"
+	"../plugins/CommonCwiseBinaryOps.h"
+	"../plugins/MatrixCwiseBinaryOps.h"
+	"../plugins/ArrayCwiseBinaryOps.h"
+
+1352150569 d:\lib\eigen\eigen\src\plugins\arraycwiseunaryops.h
+
+1352150569 d:\lib\eigen\eigen\src\plugins\arraycwisebinaryops.h
+
+1352150569 d:\lib\eigen\eigen\src\core\arraywrapper.h
+
+1352150569 d:\lib\eigen\eigen\src\core\products\generalmatrixmatrix_mkl.h
+
+1352150569 d:\lib\eigen\eigen\src\core\products\generalmatrixvector_mkl.h
+
+1352150569 d:\lib\eigen\eigen\src\core\products\generalmatrixmatrixtriangular_mkl.h
+
+1352150569 d:\lib\eigen\eigen\src\core\products\selfadjointmatrixmatrix_mkl.h
+
+1352150569 d:\lib\eigen\eigen\src\core\products\selfadjointmatrixvector_mkl.h
+
+1352150569 d:\lib\eigen\eigen\src\core\products\triangularmatrixmatrix_mkl.h
+
+1352150569 d:\lib\eigen\eigen\src\core\products\triangularmatrixvector_mkl.h
+
+1352150569 d:\lib\eigen\eigen\src\core\products\triangularsolvermatrix_mkl.h
+
+1352150569 d:\lib\eigen\eigen\src\core\assign_mkl.h
+
+1352150569 d:\lib\eigen\eigen\src\core\globalfunctions.h
+
+1352150569 d:\lib\eigen\eigen\src\core\util\reenablestupidwarnings.h
+
+1352150569 d:\lib\eigen\eigen\eigen2support
+	"src/Core/util/DisableStupidWarnings.h"
+	"src/Eigen2Support/Macros.h"
+	"src/Eigen2Support/Memory.h"
+	"src/Eigen2Support/Meta.h"
+	"src/Eigen2Support/Lazy.h"
+	"src/Eigen2Support/Cwise.h"
+	"src/Eigen2Support/CwiseOperators.h"
+	"src/Eigen2Support/TriangularSolver.h"
+	"src/Eigen2Support/Block.h"
+	"src/Eigen2Support/VectorBlock.h"
+	"src/Eigen2Support/Minor.h"
+	"src/Eigen2Support/MathFunctions.h"
+	"src/Core/util/ReenableStupidWarnings.h"
+	<iostream>
+
+1352150569 d:\lib\eigen\eigen\src\eigen2support\macros.h
+
+1352150569 d:\lib\eigen\eigen\src\eigen2support\memory.h
+
+1352150569 d:\lib\eigen\eigen\src\eigen2support\meta.h
+
+1352150569 d:\lib\eigen\eigen\src\eigen2support\lazy.h
+
+1352150569 d:\lib\eigen\eigen\src\eigen2support\cwise.h
+
+1352150569 d:\lib\eigen\eigen\src\eigen2support\cwiseoperators.h
+
+1352150569 d:\lib\eigen\eigen\src\eigen2support\triangularsolver.h
+
+1352150569 d:\lib\eigen\eigen\src\eigen2support\block.h
+
+1352150569 d:\lib\eigen\eigen\src\eigen2support\vectorblock.h
+
+1352150569 d:\lib\eigen\eigen\src\eigen2support\minor.h
+
+1352150569 d:\lib\eigen\eigen\src\eigen2support\mathfunctions.h
+
+1352150569 d:\lib\eigen\eigen\src\sparsecore\sparseutil.h
+
+1352150569 d:\lib\eigen\eigen\src\sparsecore\sparsematrixbase.h
+	"../plugins/CommonCwiseUnaryOps.h"
+	"../plugins/CommonCwiseBinaryOps.h"
+	"../plugins/MatrixCwiseUnaryOps.h"
+	"../plugins/MatrixCwiseBinaryOps.h"
+
+1352150569 d:\lib\eigen\eigen\src\sparsecore\compressedstorage.h
+
+1352150569 d:\lib\eigen\eigen\src\sparsecore\ambivector.h
+
+1352150569 d:\lib\eigen\eigen\src\sparsecore\sparsematrix.h
+
+1352150569 d:\lib\eigen\eigen\src\sparsecore\mappedsparsematrix.h
+
+1352150569 d:\lib\eigen\eigen\src\sparsecore\sparsevector.h
+
+1352150569 d:\lib\eigen\eigen\src\sparsecore\coreiterators.h
+
+1352150569 d:\lib\eigen\eigen\src\sparsecore\sparseblock.h
+
+1352150569 d:\lib\eigen\eigen\src\sparsecore\sparsetranspose.h
+
+1352150569 d:\lib\eigen\eigen\src\sparsecore\sparsecwiseunaryop.h
+
+1352150569 d:\lib\eigen\eigen\src\sparsecore\sparsecwisebinaryop.h
+
+1352150569 d:\lib\eigen\eigen\src\sparsecore\sparsedot.h
+
+1352150569 d:\lib\eigen\eigen\src\sparsecore\sparsepermutation.h
+
+1352150569 d:\lib\eigen\eigen\src\sparsecore\sparseassign.h
+
+1352150569 d:\lib\eigen\eigen\src\sparsecore\sparseredux.h
+
+1352150569 d:\lib\eigen\eigen\src\sparsecore\sparsefuzzy.h
+
+1352150569 d:\lib\eigen\eigen\src\sparsecore\conservativesparsesparseproduct.h
+
+1352150569 d:\lib\eigen\eigen\src\sparsecore\sparsesparseproductwithpruning.h
+
+1352150569 d:\lib\eigen\eigen\src\sparsecore\sparseproduct.h
+
+1352150569 d:\lib\eigen\eigen\src\sparsecore\sparsedenseproduct.h
+
+1352150569 d:\lib\eigen\eigen\src\sparsecore\sparsediagonalproduct.h
+
+1352150569 d:\lib\eigen\eigen\src\sparsecore\sparsetriangularview.h
+
+1352150569 d:\lib\eigen\eigen\src\sparsecore\sparseselfadjointview.h
+
+1352150569 d:\lib\eigen\eigen\src\sparsecore\triangularsolver.h
+
+1352150569 d:\lib\eigen\eigen\src\sparsecore\sparseview.h
+
+1352150569 d:\lib\eigen\eigen\orderingmethods
+	"SparseCore"
+	"src/Core/util/DisableStupidWarnings.h"
+	"src/OrderingMethods/Amd.h"
+	"src/Core/util/ReenableStupidWarnings.h"
+
+1352150569 d:\lib\eigen\eigen\src\orderingmethods\amd.h
+	"../Core/util/NonMPL2.h"
+
+1352150569 d:\lib\eigen\eigen\src\core\util\nonmpl2.h
+
+1352150569 d:\lib\eigen\eigen\sparsecholesky
+	"SparseCore"
+	"src/Core/util/DisableStupidWarnings.h"
+	"src/misc/Solve.h"
+	"src/misc/SparseSolve.h"
+	"src/SparseCholesky/SimplicialCholesky.h"
+	"src/Core/util/ReenableStupidWarnings.h"
+
+1352150569 d:\lib\eigen\eigen\src\misc\solve.h
+
+1352150569 d:\lib\eigen\eigen\src\misc\sparsesolve.h
+
+1352150569 d:\lib\eigen\eigen\src\sparsecholesky\simplicialcholesky.h
+	"../Core/util/NonMPL2.h"
+
+1352150569 d:\lib\eigen\eigen\iterativelinearsolvers
+	"SparseCore"
+	"OrderingMethods"
+	"src/Core/util/DisableStupidWarnings.h"
+	"src/misc/Solve.h"
+	"src/misc/SparseSolve.h"
+	"src/IterativeLinearSolvers/IterativeSolverBase.h"
+	"src/IterativeLinearSolvers/BasicPreconditioners.h"
+	"src/IterativeLinearSolvers/ConjugateGradient.h"
+	"src/IterativeLinearSolvers/BiCGSTAB.h"
+	"src/IterativeLinearSolvers/IncompleteLUT.h"
+	"src/Core/util/ReenableStupidWarnings.h"
+
+1352150569 d:\lib\eigen\eigen\src\iterativelinearsolvers\iterativesolverbase.h
+
+1352150569 d:\lib\eigen\eigen\src\iterativelinearsolvers\basicpreconditioners.h
+
+1352150569 d:\lib\eigen\eigen\src\iterativelinearsolvers\conjugategradient.h
+
+1352150569 d:\lib\eigen\eigen\src\iterativelinearsolvers\bicgstab.h
+
+1352150569 d:\lib\eigen\eigen\src\iterativelinearsolvers\incompletelut.h
 

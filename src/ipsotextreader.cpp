@@ -77,11 +77,11 @@ bool iPsoTextReader::Read(const char *filePath)
         break;
         case 2:
         {
-            grandBranchStruct grandBranch;
-            grandBranch.i=boost::lexical_cast<int>(sep.at(0));
-            grandBranch.b=boost::lexical_cast<int>(sep.at(1));
-            grandBranch.g=0;
-            this->mgrandBranchData->push_back(grandBranch);
+            groundBranchStruct groundBranch;
+            groundBranch.i=boost::lexical_cast<int>(sep.at(0));
+            groundBranch.b=boost::lexical_cast<int>(sep.at(1));
+            groundBranch.g=0;
+            this->mgroundBranchData->push_back(groundBranch);
         }
         break;
         case 3:
