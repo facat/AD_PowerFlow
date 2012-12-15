@@ -39,8 +39,8 @@ private:
     Eigen::SparseMatrix<double> mSpYMatrix;
     std::list<Eigen::Triplet<double> > mLineParaB;
     std::list<Eigen::Triplet<double> > mLineParaG;
-    std::list<Eigen::Triplet<double> > mBi_2;
-    std::list<Eigen::Triplet<double> > mBj_2;
+//    std::list<Eigen::Triplet<double> > mBi_2;
+//    std::list<Eigen::Triplet<double> > mBj_2;
     std::list<Eigen::Triplet<double> > mGroundBranchB;
     std::list<Eigen::Triplet<double> > mGroundBranchG;
     std::list<Eigen::Triplet<double> > mTransB;

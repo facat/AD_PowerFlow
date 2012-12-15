@@ -1,11 +1,20 @@
 # depslib dependency file v1.0
-1355367448 source:d:\mypro\cb_adolc_pf\main.cpp
+1355546685 source:d:\mypro\cb_adolc_pf\main.cpp
 	<iostream>
+	<ipsotextreader.h>
+	<ymatrix.h>
+	<boost/algorithm/string/regex.hpp>
+	<cstring>
 
-1355419792 source:d:\mypro\cb_adolc_pf\src\abstractreader.cpp
+1355546393 d:\mypro\cb_adolc_pf\src\ipsotextreader.h
 	"abstractreader.h"
+	<boost/algorithm/string/split.hpp>
+	<boost/lexical_cast.hpp>
+	<boost/algorithm/string/trim.hpp>
+	<string>
+	<vector>
 
-1355419782 d:\mypro\cb_adolc_pf\src\abstractreader.h
+1355494762 d:\mypro\cb_adolc_pf\src\abstractreader.h
 	<list>
 	<boost/algorithm/string.hpp>
 	<boost/shared_ptr.hpp>
@@ -3151,14 +3160,7 @@
 
 1236012322 d:\lib\boost_1_52_0\boost\smart_ptr\detail\operator_bool.hpp
 
-1355419820 source:d:\mypro\cb_adolc_pf\src\ipsotextreader.cpp
-	"ipsotextreader.h"
-
-1355414840 d:\mypro\cb_adolc_pf\src\ipsotextreader.h
-	"abstractreader.h"
-	<boost/algorithm/string/split.hpp>
-	<boost/lexical_cast.hpp>
-	<vector>
+1355419679 d:\mypro\cb_adolc_pf\src\commonstructure.h
 
 1349021252 d:\lib\boost_1_52_0\boost\lexical_cast.hpp
 	<boost/config.hpp>
@@ -4093,12 +4095,7 @@
 	<iosfwd>
 	<string>
 
-1355419679 d:\mypro\cb_adolc_pf\src\commonstructure.h
-
-1355458269 source:d:\mypro\cb_adolc_pf\src\ymatrix.cpp
-	"ymatrix.h"
-
-1355458218 d:\mypro\cb_adolc_pf\src\ymatrix.h
+1355559172 d:\mypro\cb_adolc_pf\src\ymatrix.h
 	"ipsotextreader.h"
 	<Eigen/Sparse>
 	<boost/shared_ptr.hpp>
@@ -4644,4 +4641,401 @@
 1352150569 d:\lib\eigen\eigen\src\iterativelinearsolvers\bicgstab.h
 
 1352150569 d:\lib\eigen\eigen\src\iterativelinearsolvers\incompletelut.h
+
+1252869055 d:\lib\boost_1_52_0\boost\algorithm\string\regex.hpp
+	<boost/algorithm/string/config.hpp>
+	<boost/regex.hpp>
+	<boost/range/iterator_range.hpp>
+	<boost/range/begin.hpp>
+	<boost/range/end.hpp>
+	<boost/range/iterator.hpp>
+	<boost/range/as_literal.hpp>
+	<boost/algorithm/string/find_format.hpp>
+	<boost/algorithm/string/regex_find_format.hpp>
+	<boost/algorithm/string/formatter.hpp>
+	<boost/algorithm/string/iter_find.hpp>
+
+1348857252 d:\lib\boost_1_52_0\boost\regex.hpp
+	<boost/regex/config.hpp>
+	<boost/regex/v4/regex.hpp>
+
+1342427903 d:\lib\boost_1_52_0\boost\regex\config.hpp
+	<boost/regex/config/borland.hpp>
+	<boost/config.hpp>
+	<stdlib.h>
+	<stddef.h>
+	<wctype.h>
+	<boost/regex/config/cwchar.hpp>
+	<string>
+	<boost/config/auto_link.hpp>
+	<stdexcept>
+	<string>
+	<boost/throw_exception.hpp>
+
+1106328159 d:\lib\boost_1_52_0\boost\regex\config\borland.hpp
+	<cstring>
+
+1239053844 d:\lib\boost_1_52_0\boost\regex\config\cwchar.hpp
+	<cwchar>
+	<cwctype>
+	<boost/config.hpp>
+
+1324660651 d:\lib\boost_1_52_0\boost\config\auto_link.hpp
+	<boost/config.hpp>
+	<boost/version.hpp>
+
+1348857252 d:\lib\boost_1_52_0\boost\version.hpp
+
+1106328159 d:\lib\boost_1_52_0\boost\regex\v4\regex.hpp
+	<boost/regex/config.hpp>
+	<boost/regex/v4/regex_workaround.hpp>
+	<boost/regex_fwd.hpp>
+	<boost/regex/regex_traits.hpp>
+	<boost/regex/v4/error_type.hpp>
+	<boost/regex/v4/match_flags.hpp>
+	<boost/regex/v4/regex_raw_buffer.hpp>
+	<boost/regex/pattern_except.hpp>
+	<boost/regex/v4/char_regex_traits.hpp>
+	<boost/regex/v4/states.hpp>
+	<boost/regex/v4/regbase.hpp>
+	<boost/regex/v4/iterator_traits.hpp>
+	<boost/regex/v4/basic_regex.hpp>
+	<boost/regex/v4/basic_regex_creator.hpp>
+	<boost/regex/v4/basic_regex_parser.hpp>
+	<boost/regex/v4/sub_match.hpp>
+	<boost/regex/v4/regex_format.hpp>
+	<boost/regex/v4/match_results.hpp>
+	<boost/regex/v4/protected_call.hpp>
+	<boost/regex/v4/perl_matcher.hpp>
+	<boost/regex/v4/instances.hpp>
+	<boost/regex/v4/instances.hpp>
+	<boost/regex/v4/instances.hpp>
+	<boost/regex/v4/regex_match.hpp>
+	<boost/regex/v4/regex_search.hpp>
+	<boost/regex/v4/regex_iterator.hpp>
+	<boost/regex/v4/regex_token_iterator.hpp>
+	<boost/regex/v4/regex_grep.hpp>
+	<boost/regex/v4/regex_replace.hpp>
+	<boost/regex/v4/regex_merge.hpp>
+	<boost/regex/v4/regex_split.hpp>
+
+1276331411 d:\lib\boost_1_52_0\boost\regex\v4\regex_workaround.hpp
+	<new>
+	<cstring>
+	<cstdlib>
+	<cstddef>
+	<cassert>
+	<cstdio>
+	<climits>
+	<string>
+	<stdexcept>
+	<iterator>
+	<algorithm>
+	<iosfwd>
+	<vector>
+	<map>
+	<boost/limits.hpp>
+	<boost/assert.hpp>
+	<boost/cstdint.hpp>
+	<boost/throw_exception.hpp>
+	<boost/scoped_ptr.hpp>
+	<boost/scoped_array.hpp>
+	<boost/shared_ptr.hpp>
+	<boost/mpl/bool_fwd.hpp>
+	<locale>
+
+1236010936 d:\lib\boost_1_52_0\boost\scoped_ptr.hpp
+	<boost/smart_ptr/scoped_ptr.hpp>
+
+1236012322 d:\lib\boost_1_52_0\boost\smart_ptr\scoped_ptr.hpp
+	<boost/assert.hpp>
+	<boost/checked_delete.hpp>
+	<boost/detail/workaround.hpp>
+	<memory>
+	<boost/smart_ptr/detail/operator_bool.hpp>
+
+1236010936 d:\lib\boost_1_52_0\boost\scoped_array.hpp
+	<boost/smart_ptr/scoped_array.hpp>
+
+1236012322 d:\lib\boost_1_52_0\boost\smart_ptr\scoped_array.hpp
+	<boost/assert.hpp>
+	<boost/checked_delete.hpp>
+	<boost/config.hpp>
+	<boost/detail/workaround.hpp>
+	<cstddef>
+	<boost/smart_ptr/detail/operator_bool.hpp>
+
+1348857252 d:\lib\boost_1_52_0\boost\regex_fwd.hpp
+	<boost/regex/config.hpp>
+	<boost/regex/v4/regex_fwd.hpp>
+
+1106328159 d:\lib\boost_1_52_0\boost\regex\v4\regex_fwd.hpp
+	<boost/regex/config.hpp>
+	<boost/regex.hpp>
+
+1126700441 d:\lib\boost_1_52_0\boost\regex\regex_traits.hpp
+	<boost/regex/config.hpp>
+	<boost/regex/v4/regex_traits.hpp>
+
+1196014039 d:\lib\boost_1_52_0\boost\regex\v4\regex_traits.hpp
+	<boost/regex/config.hpp>
+	<boost/regex/v4/regex_workaround.hpp>
+	<boost/regex/v4/syntax_type.hpp>
+	<boost/regex/v4/error_type.hpp>
+	<boost/regex/v4/regex_traits_defaults.hpp>
+	<boost/regex/v4/cpp_regex_traits.hpp>
+	<boost/regex/v4/c_regex_traits.hpp>
+	<boost/regex/v4/w32_regex_traits.hpp>
+	<boost/regex_fwd.hpp>
+	"boost/mpl/has_xxx.hpp"
+	<boost/static_assert.hpp>
+
+1249300807 d:\lib\boost_1_52_0\boost\regex\v4\syntax_type.hpp
+
+1260276153 d:\lib\boost_1_52_0\boost\regex\v4\error_type.hpp
+
+1262005624 d:\lib\boost_1_52_0\boost\regex\v4\regex_traits_defaults.hpp
+	<boost/regex/v4/syntax_type.hpp>
+	<boost/regex/v4/error_type.hpp>
+
+1303751622 d:\lib\boost_1_52_0\boost\regex\v4\cpp_regex_traits.hpp
+	<boost/config.hpp>
+	<boost/regex/pattern_except.hpp>
+	<boost/regex/v4/regex_traits_defaults.hpp>
+	<boost/regex/pending/static_mutex.hpp>
+	<boost/regex/v4/primary_transform.hpp>
+	<boost/regex/pending/object_cache.hpp>
+	<istream>
+	<ios>
+	<climits>
+
+1196014039 d:\lib\boost_1_52_0\boost\regex\pattern_except.hpp
+	<boost/regex/config.hpp>
+	<stdexcept>
+	<cstddef>
+	<boost/regex/v4/error_type.hpp>
+
+1286019273 d:\lib\boost_1_52_0\boost\regex\pending\static_mutex.hpp
+	<boost/config.hpp>
+	<boost/regex/config.hpp>
+	<pthread.h>
+	<boost/cstdint.hpp>
+
+1196014039 d:\lib\boost_1_52_0\boost\regex\v4\primary_transform.hpp
+
+1337853828 d:\lib\boost_1_52_0\boost\regex\pending\object_cache.hpp
+	<map>
+	<list>
+	<stdexcept>
+	<string>
+	<boost/config.hpp>
+	<boost/shared_ptr.hpp>
+	<boost/regex/pending/static_mutex.hpp>
+
+1196014039 d:\lib\boost_1_52_0\boost\regex\v4\c_regex_traits.hpp
+	<boost/regex/config.hpp>
+	<boost/regex/v4/regex_workaround.hpp>
+	<cctype>
+
+1249300807 d:\lib\boost_1_52_0\boost\regex\v4\w32_regex_traits.hpp
+	<boost/regex/pattern_except.hpp>
+	<boost/regex/v4/regex_traits_defaults.hpp>
+	<boost/regex/pending/static_mutex.hpp>
+	<boost/regex/v4/primary_transform.hpp>
+	<boost/regex/pending/object_cache.hpp>
+
+1260276153 d:\lib\boost_1_52_0\boost\regex\v4\match_flags.hpp
+	<boost/cstdint.hpp>
+
+1196014039 d:\lib\boost_1_52_0\boost\regex\v4\regex_raw_buffer.hpp
+	<boost/regex/config.hpp>
+	<algorithm>
+	<cstddef>
+
+1196014039 d:\lib\boost_1_52_0\boost\regex\v4\char_regex_traits.hpp
+
+1263203740 d:\lib\boost_1_52_0\boost\regex\v4\states.hpp
+
+1231334372 d:\lib\boost_1_52_0\boost\regex\v4\regbase.hpp
+
+1196014039 d:\lib\boost_1_52_0\boost\regex\v4\iterator_traits.hpp
+
+1342427903 d:\lib\boost_1_52_0\boost\regex\v4\basic_regex.hpp
+	<boost/type_traits/is_same.hpp>
+	<boost/functional/hash.hpp>
+
+1236811869 d:\lib\boost_1_52_0\boost\functional\hash.hpp
+	<boost/functional/hash/hash.hpp>
+
+1346190496 d:\lib\boost_1_52_0\boost\functional\hash\hash.hpp
+	<boost/functional/hash/hash_fwd.hpp>
+	<functional>
+	<boost/functional/hash/detail/hash_float.hpp>
+	<string>
+	<boost/limits.hpp>
+	<boost/type_traits/is_enum.hpp>
+	<boost/utility/enable_if.hpp>
+	<boost/type_traits/is_pointer.hpp>
+	<typeindex>
+	<boost/functional/hash/extensions.hpp>
+
+1346190657 d:\lib\boost_1_52_0\boost\functional\hash\detail\hash_float.hpp
+	<boost/config.hpp>
+	<boost/functional/hash/detail/float_functions.hpp>
+	<boost/functional/hash/detail/limits.hpp>
+	<boost/utility/enable_if.hpp>
+	<boost/integer/static_log2.hpp>
+	<boost/cstdint.hpp>
+	<boost/assert.hpp>
+	<boost/limits.hpp>
+	<cstring>
+	<boost/config/no_tr1/cmath.hpp>
+
+1262929119 d:\lib\boost_1_52_0\boost\functional\hash\detail\float_functions.hpp
+	<boost/config.hpp>
+	<boost/config/no_tr1/cmath.hpp>
+
+1243543375 d:\lib\boost_1_52_0\boost\functional\hash\detail\limits.hpp
+	<boost/limits.hpp>
+	<float.h>
+
+1260814488 d:\lib\boost_1_52_0\boost\integer\static_log2.hpp
+	"boost/integer_fwd.hpp"
+
+1342397910 d:\lib\boost_1_52_0\boost\functional\hash\extensions.hpp
+	<boost/functional/hash/hash.hpp>
+	<boost/functional/hash/detail/container_fwd_0x.hpp>
+	<boost/utility/enable_if.hpp>
+	<boost/static_assert.hpp>
+	<boost/preprocessor/repetition/repeat_from_to.hpp>
+	<boost/preprocessor/repetition/enum_params.hpp>
+	<boost/type_traits/is_array.hpp>
+	<boost/type_traits/is_const.hpp>
+
+1345071889 d:\lib\boost_1_52_0\boost\functional\hash\detail\container_fwd_0x.hpp
+	<boost/detail/container_fwd.hpp>
+	<array>
+	<tuple>
+	<memory>
+
+1333222496 d:\lib\boost_1_52_0\boost\detail\container_fwd.hpp
+	<boost/config.hpp>
+	<boost/detail/workaround.hpp>
+	<deque>
+	<list>
+	<vector>
+	<map>
+	<set>
+	<bitset>
+	<string>
+	<complex>
+	<cstddef>
+	<deque>
+	<bitset>
+
+1095090689 d:\lib\boost_1_52_0\boost\preprocessor\repetition\repeat_from_to.hpp
+	<boost/preprocessor/arithmetic/add.hpp>
+	<boost/preprocessor/arithmetic/sub.hpp>
+	<boost/preprocessor/cat.hpp>
+	<boost/preprocessor/config/config.hpp>
+	<boost/preprocessor/control/while.hpp>
+	<boost/preprocessor/debug/error.hpp>
+	<boost/preprocessor/detail/auto_rec.hpp>
+	<boost/preprocessor/repetition/repeat.hpp>
+	<boost/preprocessor/tuple/elem.hpp>
+	<boost/preprocessor/tuple/rem.hpp>
+
+1337853828 d:\lib\boost_1_52_0\boost\regex\v4\basic_regex_creator.hpp
+
+1342427903 d:\lib\boost_1_52_0\boost\regex\v4\basic_regex_parser.hpp
+
+1287576678 d:\lib\boost_1_52_0\boost\regex\v4\sub_match.hpp
+
+1337853828 d:\lib\boost_1_52_0\boost\regex\v4\regex_format.hpp
+	<boost/type_traits/is_pointer.hpp>
+	<boost/type_traits/is_function.hpp>
+	<boost/type_traits/is_class.hpp>
+	<boost/type_traits/is_same.hpp>
+	<boost/type_traits/is_convertible.hpp>
+	<boost/type_traits/remove_pointer.hpp>
+	<boost/type_traits/remove_cv.hpp>
+	<boost/mpl/if.hpp>
+	<boost/mpl/and.hpp>
+	<boost/mpl/not.hpp>
+	<boost/mpl/has_xxx.hpp>
+	<boost/ref.hpp>
+
+1342427903 d:\lib\boost_1_52_0\boost\regex\v4\match_results.hpp
+
+1196014039 d:\lib\boost_1_52_0\boost\regex\v4\protected_call.hpp
+
+1342427903 d:\lib\boost_1_52_0\boost\regex\v4\perl_matcher.hpp
+	<boost/regex/v4/iterator_category.hpp>
+	<boost/regex/v4/perl_matcher_recursive.hpp>
+	<boost/regex/v4/perl_matcher_non_recursive.hpp>
+	<boost/regex/v4/perl_matcher_common.hpp>
+
+1249300807 d:\lib\boost_1_52_0\boost\regex\v4\iterator_category.hpp
+	<iterator>
+	<boost/type_traits/is_convertible.hpp>
+	<boost/type_traits/is_pointer.hpp>
+
+1286019273 d:\lib\boost_1_52_0\boost\regex\v4\perl_matcher_recursive.hpp
+
+1337853828 d:\lib\boost_1_52_0\boost\regex\v4\perl_matcher_non_recursive.hpp
+	<new>
+
+1287576678 d:\lib\boost_1_52_0\boost\regex\v4\perl_matcher_common.hpp
+
+1342427903 d:\lib\boost_1_52_0\boost\regex\v4\instances.hpp
+
+1196014039 d:\lib\boost_1_52_0\boost\regex\v4\regex_match.hpp
+
+1196014039 d:\lib\boost_1_52_0\boost\regex\v4\regex_search.hpp
+
+1342427903 d:\lib\boost_1_52_0\boost\regex\v4\regex_iterator.hpp
+	<boost/shared_ptr.hpp>
+
+1196014039 d:\lib\boost_1_52_0\boost\regex\v4\regex_token_iterator.hpp
+	<boost/shared_ptr.hpp>
+	<boost/detail/workaround.hpp>
+	<boost/static_assert.hpp>
+	<boost/type_traits/is_array.hpp>
+
+1196014039 d:\lib\boost_1_52_0\boost\regex\v4\regex_grep.hpp
+
+1260276153 d:\lib\boost_1_52_0\boost\regex\v4\regex_replace.hpp
+
+1196014039 d:\lib\boost_1_52_0\boost\regex\v4\regex_merge.hpp
+
+1196014039 d:\lib\boost_1_52_0\boost\regex\v4\regex_split.hpp
+
+1196014039 d:\lib\boost_1_52_0\boost\algorithm\string\regex_find_format.hpp
+	<boost/algorithm/string/config.hpp>
+	<boost/regex.hpp>
+	<boost/algorithm/string/detail/finder_regex.hpp>
+	<boost/algorithm/string/detail/formatter_regex.hpp>
+
+1252869055 d:\lib\boost_1_52_0\boost\algorithm\string\detail\finder_regex.hpp
+	<boost/algorithm/string/config.hpp>
+	<boost/regex.hpp>
+	<boost/range/iterator_range.hpp>
+	<boost/range/begin.hpp>
+	<boost/range/end.hpp>
+
+1196014039 d:\lib\boost_1_52_0\boost\algorithm\string\detail\formatter_regex.hpp
+	<boost/algorithm/string/config.hpp>
+	<string>
+	<boost/regex.hpp>
+	<boost/algorithm/string/detail/finder_regex.hpp>
+
+1355546534 source:d:\mypro\cb_adolc_pf\src\abstractreader.cpp
+	"abstractreader.h"
+
+1355546662 source:d:\mypro\cb_adolc_pf\src\ipsotextreader.cpp
+	"ipsotextreader.h"
+	<cstring>
+
+1355560471 source:d:\mypro\cb_adolc_pf\src\ymatrix.cpp
+	"ymatrix.h"
 

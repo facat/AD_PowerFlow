@@ -33,9 +33,9 @@ bool YMatrix::MakeParameter()
     allTripletG.insert(allTripletG.end(),this->mTransG.begin(),this->mTransG.end());
     allTripletG.insert(allTripletG.end(),this->mGroundBranchG.begin(),this->mGroundBranchG.end());
     Eigen::SparseMatrix<double> spMatB(this->mTotalNode,this->mTotalNode);
+    spMatB.setFromTriplets(allTripletB.begin(),allTripletB.end());
     Eigen::SparseMatrix<double> spMatG(this->mTotalNode,this->mTotalNode);
-//    Eigen::SparseMatrix<double> spMatY(this->mTotalNode,this->mTotalNode);
-//    Eigen::SparseMatrix<double> spMatYAngle(this->mTotalNode,this->mTotalNode);
+    spMatG.setFromTriplets(allTripletG.begin(),allTripletG.end());
     *this->mSpMatY=(spMatB.cwiseAbs2()+spMatG.cwiseAbs2()).cwiseSqrt();
     *this->mSpMatYAngle=spMatB.binaryExpr(spMatG,Opatan());
     return true;
@@ -48,22 +48,22 @@ void YMatrix::MakeLineParameter(boost::shared_ptr<std::list<lineStruct> > lineDa
 //B = sparse(lineI,lineJ,t2,Busnum,Busnum)+sparse(lineJ,lineI,t2,Busnum,Busnum);
 
     std::vector<double> addB;//累积电纳用
-    addB.reserve(this->mTotalNode);
+    addB.resize(this->mTotalNode,0);
     std::vector<double> addG;//累积电导
-    addG.reserve(this->mTotalNode);
+    addG.resize(this->mTotalNode,0);
     for(std::list<lineStruct>::iterator ite=lineData->begin();
             ite!=lineData->end();
             ite++)
     {
         lineStruct line=*ite;
         //充电电容
-        this->mBi_2.push_back(
+        this->mLineParaB.push_back(
             Eigen::Triplet<double>(line.i,
                                    line.i,
                                    line.bi_2
                                   )
         );
-        this->mBj_2.push_back(
+        this->mLineParaB.push_back(
             Eigen::Triplet<double>(line.j,
                                    line.j,
                                    line.bj_2
@@ -74,29 +74,29 @@ void YMatrix::MakeLineParameter(boost::shared_ptr<std::list<lineStruct> > lineDa
         //电阻
         this->mLineParaG.push_back(Eigen::Triplet<double>(line.i,
                                    line.j,
-                                   -line.x/(r2+x2)
+                                   -line.r/(r2+x2)
                                                          )
                                   );
-        addB[line.j]+=-line.r/(r2+x2);//按列累加
+        addG[line.j]+=-line.r/(r2+x2);//按列累加
         this->mLineParaG.push_back(Eigen::Triplet<double>(line.j,
                                    line.i,
                                    -line.r/(r2+x2)
                                                          )
                                   );
-        addB[line.i]+=-line.r/(r2+x2);//按列累加
+        addG[line.i]+=-line.r/(r2+x2);//按列累加
         //电抗
         this->mLineParaB.push_back(Eigen::Triplet<double>(line.i,
                                    line.j,
                                    line.x/(r2+x2)
                                                          )
                                   );
-        addG[line.j]+=line.x/(r2+x2);//按列累加
+        addB[line.j]+=line.x/(r2+x2);//按列累加
         this->mLineParaB.push_back(Eigen::Triplet<double>(line.j,
                                    line.i,
                                    line.x/(r2+x2)
                                                          )
                                   );
-        addG[line.i]+=line.x/(r2+x2);//按列累加
+        addB[line.i]+=line.x/(r2+x2);//按列累加
         //电纳
     }
 
@@ -110,6 +110,7 @@ void YMatrix::MakeLineParameter(boost::shared_ptr<std::list<lineStruct> > lineDa
                                    -addB.at(i)
                                   )
         );
+//        std::cout<<-addB.at(i)<<std::endl;
         this->mLineParaG.push_back(
             Eigen::Triplet<double>(i,
                                    i,

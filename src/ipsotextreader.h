@@ -9,24 +9,13 @@
 #include <boost/algorithm/string/split.hpp>
 //#include <boost/numeric/conversion/converter.hpp>
 #include <boost/lexical_cast.hpp>
+#include <boost/algorithm/string/trim.hpp>
+#include <string>
 #include <vector>
 namespace DMY
 {
 class iPsoTextReader:public AbstractReader
 {
-//    enum blockTypeEnum
-//    {
-//        basicInfo=0,
-//        EPSandSwingNode=1,//EPS 和xxx
-//        swing=2,
-//        line=3,
-//        groundBranch=4,
-//        trans=5,
-//        nodePower=6,
-//        genReativepow=7,
-//        gencost=8
-//    };//记录当前数据块
-//    typedef enum blockTypeEnum blockType;
     public:
         /** Default constructor */
         iPsoTextReader();
@@ -35,6 +24,7 @@ class iPsoTextReader:public AbstractReader
         virtual bool Read(const char *filePath);
     protected:
     private:
+        std::string Simplified(std::string &str);//删除多余的空格，只用一个空格作为间隔。
 };
 
 }

@@ -39,7 +39,6 @@ public:
 protected:
     basicInfoStruct mBasicInfo;
     boost::shared_ptr<std::list<swingNodeStruct> >  mSwingNodeData;
-
     boost::shared_ptr<std::list<lineStruct> > mLineData;
     boost::shared_ptr<std::list<transStruct> > mTransData;
     boost::shared_ptr<std::list<capacitorStruct> > mCapacitorData;

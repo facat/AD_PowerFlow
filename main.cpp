@@ -4,14 +4,23 @@
 #include <iostream>
 #include <ipsotextreader.h>
 #include <ymatrix.h>
+#include <boost/algorithm/string/regex.hpp>
+#include <cstring>
 using namespace std;
 
 int main()
 {
-    cout << "Hello world!" << endl;
-    DMY::iPsoTextReader reader;
-    reader.Read("E:/OPF/ieee4.dat");
-    DMY::YMatrix yMatrix(reader);
-    std::cout<<yMatrix.GetYMatrix()<<std::endl;
-    return 0;
+	cout << "Hello world!" << endl;
+	DMY::iPsoTextReader reader;
+	if(reader.Read("E:/OPF/ieee4.dat"))
+	{
+		DMY::YMatrix yMatrix(reader);
+		if(yMatrix.MakeParameter())
+		{
+			std::cout<<*(yMatrix.GetYMatrix())<<std::endl;
+		}
+	}
+
+
+	return 0;
 }
