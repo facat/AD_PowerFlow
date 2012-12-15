@@ -17,7 +17,10 @@ int main()
 		DMY::YMatrix yMatrix(reader);
 		if(yMatrix.MakeParameter())
 		{
+		    std::cout<<"Y"<<std::endl;
 			std::cout<<*(yMatrix.GetYMatrix())<<std::endl;
+			std::cout<<"YAngle"<<std::endl;
+			std::cout<<*(yMatrix.GetYAngleMatrix())<<std::endl;
 		}
 	}
 
