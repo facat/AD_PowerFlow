@@ -114,7 +114,7 @@ void PFJacobian::Make(const std::vector<double> &Volt,const std::vector<double> 
     {
         for(int j=0; j<totalNum; j++)
         {
-            std::cout<<jacoMat[i][j]<<"\t";
+            std::cout<<jacoMat[i][j+totalNum]<<"\t";
         }
         std::cout<<std::endl;
         delete[] jacoMat[i];
