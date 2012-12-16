@@ -16,7 +16,12 @@
 					<Add directory="D:/Lib/boost_1_52_0" />
 					<Add directory="D:/MyPro/CB_ADOLC_PF/src" />
 					<Add directory="D:/Lib/eigen" />
+					<Add directory="D:/Lib/ADOL-C-GCC/library/include" />
 				</Compiler>
+				<Linker>
+					<Add library="D:\Lib\ADOL-C-GCC\library\lib\libadolc.a" />
+					<Add library="D:\Lib\ColPack-GCC\lib\libColPack.a" />
+				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/CB_ADOLC_PF" prefix_auto="1" extension_auto="1" />
@@ -38,9 +43,12 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="src/abstractreader.cpp" />
 		<Unit filename="src/abstractreader.h" />
+		<Unit filename="src/adolc_addtional_support.h" />
 		<Unit filename="src/commonstructure.h" />
 		<Unit filename="src/ipsotextreader.cpp" />
 		<Unit filename="src/ipsotextreader.h" />
+		<Unit filename="src/pfjacobian.cpp" />
+		<Unit filename="src/pfjacobian.h" />
 		<Unit filename="src/ymatrix.cpp" />
 		<Unit filename="src/ymatrix.h" />
 		<Extensions>
@@ -48,6 +56,15 @@
 			<envvars />
 			<debugger />
 			<lib_finder disable_auto="1" />
+			<DoxyBlocks>
+				<comment_style block="0" line="0" />
+				<doxyfile_project />
+				<doxyfile_build />
+				<doxyfile_warnings />
+				<doxyfile_output />
+				<doxyfile_dot />
+				<general />
+			</DoxyBlocks>
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

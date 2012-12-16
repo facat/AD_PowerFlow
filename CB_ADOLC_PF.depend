@@ -1,20 +1,26 @@
 # depslib dependency file v1.0
-1355546685 source:d:\mypro\cb_adolc_pf\main.cpp
+1355624162 source:d:\mypro\cb_adolc_pf\main.cpp
 	<iostream>
 	<ipsotextreader.h>
 	<ymatrix.h>
-	<boost/algorithm/string/regex.hpp>
-	<cstring>
+	<string>
+	<PFjacobian.h>
+	<vector>
+	<commonstructure.h>
+	<list>
+	<boost/shared_ptr.hpp>
+	<boost/shared_array.hpp>
 
-1355546393 d:\mypro\cb_adolc_pf\src\ipsotextreader.h
+1355566228 d:\mypro\cb_adolc_pf\src\ipsotextreader.h
 	"abstractreader.h"
 	<boost/algorithm/string/split.hpp>
 	<boost/lexical_cast.hpp>
 	<boost/algorithm/string/trim.hpp>
 	<string>
 	<vector>
+	<boost/shared_array.hpp>
 
-1355494762 d:\mypro\cb_adolc_pf\src\abstractreader.h
+1355562582 d:\mypro\cb_adolc_pf\src\abstractreader.h
 	<list>
 	<boost/algorithm/string.hpp>
 	<boost/shared_ptr.hpp>
@@ -3160,7 +3166,7 @@
 
 1236012322 d:\lib\boost_1_52_0\boost\smart_ptr\detail\operator_bool.hpp
 
-1355419679 d:\mypro\cb_adolc_pf\src\commonstructure.h
+1355562582 d:\mypro\cb_adolc_pf\src\commonstructure.h
 
 1349021252 d:\lib\boost_1_52_0\boost\lexical_cast.hpp
 	<boost/config.hpp>
@@ -4095,11 +4101,11 @@
 	<iosfwd>
 	<string>
 
-1355559172 d:\mypro\cb_adolc_pf\src\ymatrix.h
+1355625729 d:\mypro\cb_adolc_pf\src\ymatrix.h
 	"ipsotextreader.h"
 	<Eigen/Sparse>
 	<boost/shared_ptr.hpp>
-	<cmath>
+	<math.h>
 	<list>
 
 1352150569 d:\lib\eigen\eigen\sparse
@@ -5029,13 +5035,140 @@
 	<boost/regex.hpp>
 	<boost/algorithm/string/detail/finder_regex.hpp>
 
-1355546534 source:d:\mypro\cb_adolc_pf\src\abstractreader.cpp
+1355562582 source:d:\mypro\cb_adolc_pf\src\abstractreader.cpp
 	"abstractreader.h"
 
-1355546662 source:d:\mypro\cb_adolc_pf\src\ipsotextreader.cpp
+1355562582 source:d:\mypro\cb_adolc_pf\src\ipsotextreader.cpp
 	"ipsotextreader.h"
 	<cstring>
 
-1355560549 source:d:\mypro\cb_adolc_pf\src\ymatrix.cpp
+1355579337 source:d:\mypro\cb_adolc_pf\src\ymatrix.cpp
 	"ymatrix.h"
+
+1236010936 d:\lib\boost_1_52_0\boost\shared_array.hpp
+	<boost/smart_ptr/shared_array.hpp>
+
+1322675503 d:\lib\boost_1_52_0\boost\smart_ptr\shared_array.hpp
+	<boost/config.hpp>
+	<boost/smart_ptr/detail/shared_array_nmt.hpp>
+	<memory>
+	<boost/assert.hpp>
+	<boost/checked_delete.hpp>
+	<boost/smart_ptr/detail/shared_count.hpp>
+	<boost/detail/workaround.hpp>
+	<cstddef>
+	<algorithm>
+	<functional>
+	<boost/smart_ptr/detail/operator_bool.hpp>
+
+1236010936 d:\lib\boost_1_52_0\boost\smart_ptr\detail\shared_array_nmt.hpp
+	<boost/assert.hpp>
+	<boost/checked_delete.hpp>
+	<boost/throw_exception.hpp>
+	<boost/smart_ptr/detail/atomic_count.hpp>
+	<cstddef>
+	<algorithm>
+	<functional>
+	<new>
+
+1355625442 source:d:\mypro\cb_adolc_pf\src\pfjacobian.cpp
+	"pfjacobian.h"
+
+1355587582 d:\mypro\cb_adolc_pf\src\pfjacobian.h
+	<Eigen/Sparse>
+	<boost/shared_ptr.hpp>
+	<YMatrix.h>
+	<AbstractReader.h>
+	<commonstructure.h>
+	<list>
+	<vector>
+	<adolc/adolc.h>
+	<math.h>
+	<iostream>
+	<adolc_addtional_support.h>
+
+1354780315 d:\lib\adol-c-gcc\library\include\adolc\adolc.h
+	<adolc/common.h>
+	<adolc/adouble.h>
+	<adolc/externfcts.h>
+	<adolc/checkpointing.h>
+	<adolc/fixpoint.h>
+	<adolc/interfaces.h>
+	<adolc/drivers/drivers.h>
+	<adolc/drivers/taylor.h>
+	<adolc/drivers/odedrivers.h>
+	<adolc/tapedoc/tapedoc.h>
+	<adolc/sparse/sparsedrivers.h>
+	<adolc/sparse/sparse_fo_rev.h>
+	<adolc/taping.h>
+	<adolc/adalloc.h>
+
+1354780316 d:\lib\adol-c-gcc\library\include\adolc\common.h
+	<stdlib.h>
+	<stdio.h>
+	<cstdlib>
+	<cstdio>
+	<omp.h>
+	"config.h"
+	"malloc.h"
+	"malloc.h"
+	<adolc/dvlparms.h>
+	<adolc/usrparms.h>
+
+1354780316 d:\lib\adol-c-gcc\library\include\adolc\dvlparms.h
+
+1354780316 d:\lib\adol-c-gcc\library\include\adolc\usrparms.h
+
+1354780315 d:\lib\adol-c-gcc\library\include\adolc\adouble.h
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<cmath>
+	<adolc/common.h>
+	<limits>
+
+1354780316 d:\lib\adol-c-gcc\library\include\adolc\externfcts.h
+	<adolc/common.h>
+	<adolc/adouble.h>
+
+1354780316 d:\lib\adol-c-gcc\library\include\adolc\checkpointing.h
+	<adolc/common.h>
+	<adolc/adouble.h>
+
+1354780316 d:\lib\adol-c-gcc\library\include\adolc\fixpoint.h
+	<adolc/common.h>
+
+1354780316 d:\lib\adol-c-gcc\library\include\adolc\interfaces.h
+	<adolc/common.h>
+	<adolc/sparse/sparsedrivers.h>
+	<adolc/sparse/sparse_fo_rev.h>
+
+1354780316 d:\lib\adol-c-gcc\library\include\adolc\sparse\sparsedrivers.h
+	<adolc/common.h>
+
+1354780316 d:\lib\adol-c-gcc\library\include\adolc\sparse\sparse_fo_rev.h
+	<adolc/common.h>
+
+1354780316 d:\lib\adol-c-gcc\library\include\adolc\drivers\drivers.h
+	<adolc/common.h>
+
+1354780316 d:\lib\adol-c-gcc\library\include\adolc\drivers\taylor.h
+	<adolc/common.h>
+
+1354780316 d:\lib\adol-c-gcc\library\include\adolc\drivers\odedrivers.h
+	<adolc/common.h>
+	<adolc/interfaces.h>
+
+1354780317 d:\lib\adol-c-gcc\library\include\adolc\tapedoc\tapedoc.h
+	<adolc/common.h>
+
+1354780316 d:\lib\adol-c-gcc\library\include\adolc\taping.h
+	<adolc/common.h>
+
+1354780315 d:\lib\adol-c-gcc\library\include\adolc\adalloc.h
+	<adolc/common.h>
+
+1355587760 d:\mypro\cb_adolc_pf\src\adolc_addtional_support.h
+	<adolc/adouble.h>
+	<Eigen/Core>
 

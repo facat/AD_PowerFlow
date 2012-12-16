@@ -7,7 +7,7 @@
 #include "ipsotextreader.h"
 #include <Eigen/Sparse>
 #include <boost/shared_ptr.hpp>
-#include <cmath>
+#include <math.h>
 #include <list>
 namespace DMY
 {
@@ -15,7 +15,7 @@ namespace DMY
 struct Opatan {
 EIGEN_EMPTY_STRUCT_CTOR(Opatan)
 //typedef complex<Scalar> result_type;
-double operator()(const double& a, const double& b) const { return std::atan(a/b); }
+double operator()(const double& a, const double& b) const { return atan2(a,b); }
 };
 
 
@@ -29,6 +29,7 @@ public:
     bool MakeParameter();
     boost::shared_ptr<Eigen::SparseMatrix<double> > GetYMatrix() const;
     boost::shared_ptr<Eigen::SparseMatrix<double> > GetYAngleMatrix() const;
+//    int GetTotalNodeNum() const;
 protected:
 private:
     void MakeLineParameter(boost::shared_ptr<std::list<lineStruct> > lineData);

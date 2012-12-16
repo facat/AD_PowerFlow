@@ -1,5 +1,5 @@
 /********************************************************
-ÕâÊÇÒ»¸ö¼Ì³ĞÀà£¬ÓÃÓÚ´ÓIEEExxx.datÎÄ¼ş¶ÁÈëÊı¾İ¡£
+è¿™æ˜¯ä¸€ä¸ªç»§æ‰¿ç±»ï¼Œç”¨äºä»IEEExxx.datæ–‡ä»¶è¯»å…¥æ•°æ®ã€‚
 *********************************************************/
 
 #ifndef IPSOTEXTREADER_H
@@ -12,6 +12,7 @@
 #include <boost/algorithm/string/trim.hpp>
 #include <string>
 #include <vector>
+#include <boost/shared_array.hpp>
 namespace DMY
 {
 class iPsoTextReader:public AbstractReader
@@ -24,7 +25,7 @@ class iPsoTextReader:public AbstractReader
         virtual bool Read(const char *filePath);
     protected:
     private:
-        std::string Simplified(std::string &str);//É¾³ı¶àÓàµÄ¿Õ¸ñ£¬Ö»ÓÃÒ»¸ö¿Õ¸ñ×÷Îª¼ä¸ô¡£
+        std::string Simplified(std::string &str);//åˆ é™¤å¤šä½™çš„ç©ºæ ¼ï¼Œåªç”¨ä¸€ä¸ªç©ºæ ¼ä½œä¸ºé—´éš”ã€‚
 };
 
 }

@@ -221,6 +221,14 @@ boost::shared_ptr<Eigen::SparseMatrix<double> > YMatrix::GetYAngleMatrix() const
 }
 
 
+
+
+//int YMatrix::GetTotalNodeNum() const
+//{
+//    return this->mTotalNode;
+//}
+
+
 }
 
 
