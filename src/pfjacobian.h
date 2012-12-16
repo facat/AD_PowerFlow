@@ -22,7 +22,7 @@ class PFJacobian
     public:
         /** Default constructor */
     explicit    PFJacobian(const AbstractReader &reader,const YMatrix &yMatrix);
-    void Make(const std::vector<double> &Volt,const std::vector<double> &VoltAngle);
+    void Make(const std::vector<double> &VoltAngle,const std::vector<double> &Volt);
     void Fun(double *x,double *y);
     private:
         void MakeTrace(double *x);

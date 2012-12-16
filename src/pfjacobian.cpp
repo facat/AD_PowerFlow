@@ -76,7 +76,7 @@ PFJacobian::PFJacobian(const AbstractReader &reader,const YMatrix &yMatrix):
 }
 
 
-void PFJacobian::Make(const std::vector<double> &Volt,const std::vector<double> &VoltAngle)
+void PFJacobian::Make(const std::vector<double> &VoltAngle,const std::vector<double> &Volt)
 {
 
 
@@ -86,8 +86,8 @@ void PFJacobian::Make(const std::vector<double> &Volt,const std::vector<double> 
     double *y=new double[totalNum];
     for(int i=0; i<totalNum; i++)
     {
-        x[i]=Volt.at(i);
-        x[i+totalNum]=VoltAngle.at(i);
+        x[i]=VoltAngle.at(i);
+        x[i+totalNum]=Volt.at(i);
         jacoMat[i]=new double[totalNum*2];
     }
     //
@@ -114,7 +114,7 @@ void PFJacobian::Make(const std::vector<double> &Volt,const std::vector<double> 
     {
         for(int j=0; j<totalNum; j++)
         {
-            std::cout<<jacoMat[i][j+totalNum]<<"\t";
+            std::cout<<jacoMat[i][j]<<"\t";
         }
         std::cout<<std::endl;
         delete[] jacoMat[i];
@@ -142,18 +142,19 @@ void PFJacobian::MakeTrace(double *x)
     //boost::shared_array<adouble> y(new adouble [totalNum]);
     boost::shared_array<double> dummy(new double [totalNum]);
     trace_on(10);
-    for(int i=0; i<totalNum; i++)
-    {
-        xVolt[i]<<=x[i];
-        //xVoltAngle[i]<<=x[i+totalNum];
-    }
+
 
     for(int i=0; i<totalNum; i++)
     {
         //xVolt[i]<<=x[i];
-        xVoltAngle[i]<<=x[i+totalNum];
+        xVoltAngle[i]<<=x[i];
     }
 
+    for(int i=0; i<totalNum; i++)
+    {
+        xVolt[i]<<=x[i+totalNum];
+        //xVoltAngle[i]<<=x[i+totalNum];
+    }
 //    /********************************************/
 //
 //    adouble *_P=new adouble[totalNum];

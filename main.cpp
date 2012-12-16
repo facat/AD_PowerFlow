@@ -111,7 +111,7 @@ int main()
                 value=*ite;
                 volt[value.i]=value.fixVolt;
             }
-			pfJacobian.Make(volt,voltAngle);
+			pfJacobian.Make(voltAngle,volt);
 
 		}
 		else
