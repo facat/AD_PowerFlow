@@ -98,6 +98,7 @@ void PFJacobian::Make(const std::vector<double> &VoltAngle,const std::vector<dou
     //
 
     this->MakeTrace(x);
+    this->Unbalance(x);
     //MakeV2(x);
 
     //return;
@@ -105,6 +106,7 @@ void PFJacobian::Make(const std::vector<double> &VoltAngle,const std::vector<dou
 
 
     jacobian(10,totalNum*2,totalNum*2,x,jacoMat);
+    this->Modify(jacoMat);
     std::cout<<"fun"<<std::endl;
     this->Fun(x,y);
     for(int i=0; i<totalNum*2; i++)
@@ -330,5 +332,34 @@ void PFJacobian::Modify(double **jacoMat)//为了PV和平衡节点进行修改�
 
 }
 
+void PFJacobian::Unbalance(double *x)
+{
+    int totalNode=this->mReader.GetTotalNodeNum();
+    double *y=new double[totalNode*2];
+    function(10,totalNode*2,totalNode*2,x,y);
+    this->mUnbanlance.reset(new double[totalNode*2]);
+    for(int i=0;i<totalNode*2;i++)
+    {
+        this->mUnbanlance[i]=y[i];
+    }
+
+    boost::shared_ptr<std::list<nodePowerStruct> > nodePow=this->mReader.GetNodePowerData();
+    for(std::list<nodePowerStruct>::iterator ite=nodePow->begin();
+        ite!=nodePow->end();
+        ++ite
+    )
+    {
+        nodePowerStruct value;
+        value=*ite;
+        this->mUnbanlance[value.i]+=value.PD-value.PG;
+        this->mUnbanlance[value.i+totalNode]+=value.QD-value.QG;
+    }
+    delete[] y;
+}
+
+boost::shared_array<double> PFJacobian::GetUnbalance() const
+{
+    return this->mUnbanlance;
+}
 
 }
