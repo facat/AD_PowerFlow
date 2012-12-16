@@ -37,9 +37,23 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="D:/Lib/boost_1_52_0" />
+					<Add directory="D:/Lib/eigen" />
+					<Add directory="D:/Lib/ADOL-C-GCC/library/include" />
+					<Add directory="D:/MyPro/CB_ADOLC_PF/" />
+					<Add directory="D:/Lib/SuitSparseLib/include" />
+					<Add directory="D:/MyPro/CB_ADOLC_PF/src" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
+					<Add library="D:\Lib\SuitSparseLib\libklu.a" />
+					<Add library="D:\Lib\SuitSparseLib\libbtf.a" />
+					<Add library="D:\Lib\SuitSparseLib\libamd.a" />
+					<Add library="D:\Lib\SuitSparseLib\libcolamd.a" />
+					<Add library="D:\Lib\SuitSparseLib\libccolamd.a" />
+					<Add library="D:\Lib\SuitSparseLib\libcholmod.a" />
+					<Add library="D:\Lib\ADOL-C-GCC\library\lib\libadolc.a" />
+					<Add library="D:\Lib\ColPack-GCC\lib\libColPack.a" />
 				</Linker>
 			</Target>
 		</Build>
@@ -62,6 +76,7 @@
 		<Unit filename="src/solve.h" />
 		<Unit filename="src/ymatrix.cpp" />
 		<Unit filename="src/ymatrix.h" />
+		<Unit filename="version.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
@@ -76,6 +91,12 @@
 				<doxyfile_dot />
 				<general />
 			</DoxyBlocks>
+			<AutoVersioning>
+				<Scheme minor_max="10" build_max="0" rev_max="0" rev_rand_max="10" build_times_to_increment_minor="100" />
+				<Settings autoincrement="1" date_declarations="1" update_manifest="0" do_auto_increment="0" ask_to_increment="0" language="C++" svn="0" svn_directory="" header_path="version.h" />
+				<Changes_Log show_changes_editor="0" app_title="released version %M.%m.%b of %p" changeslog_path="ChangesLog.txt" />
+				<Code header_guard="VERSION_H" namespace="AutoVersion" prefix="" />
+			</AutoVersioning>
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
