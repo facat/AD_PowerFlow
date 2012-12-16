@@ -82,12 +82,17 @@ void PFJacobian::Make(const std::vector<double> &VoltAngle,const std::vector<dou
 
     int totalNum=this->mReader.GetTotalNodeNum();
     double *x=new double[totalNum*2];
-    double ** jacoMat=new double *[totalNum];
-    double *y=new double[totalNum];
+    double ** jacoMat=new double *[totalNum*2];
+    double *y=new double[totalNum*2];
     for(int i=0; i<totalNum; i++)
     {
         x[i]=VoltAngle.at(i);
         x[i+totalNum]=Volt.at(i);
+    }
+
+    for(int i=0; i<totalNum*2; i++)
+    {
+
         jacoMat[i]=new double[totalNum*2];
     }
     //
@@ -99,11 +104,11 @@ void PFJacobian::Make(const std::vector<double> &VoltAngle,const std::vector<dou
 
 
 
-    jacobian(10,totalNum,totalNum*2,x,jacoMat);
+    jacobian(10,totalNum*2,totalNum*2,x,jacoMat);
 
     std::cout<<"fun"<<std::endl;
     this->Fun(x,y);
-    for(int i=0; i<totalNum; i++)
+    for(int i=0; i<totalNum*2; i++)
     {
         std::cout<<y[i]<<std::endl;
     }
@@ -114,7 +119,7 @@ void PFJacobian::Make(const std::vector<double> &VoltAngle,const std::vector<dou
     {
         for(int j=0; j<totalNum; j++)
         {
-            std::cout<<jacoMat[i][j]<<"\t";
+            std::cout<<jacoMat[i+totalNum][j+totalNum]<<"\t";
         }
         std::cout<<std::endl;
         delete[] jacoMat[i];
@@ -133,7 +138,8 @@ void PFJacobian::MakeTrace(double *x)
     int totalNum=this->mReader.GetTotalNodeNum();
     Eigen::SparseMatrix<adouble> spVolt(totalNum,1);
 //    Eigen::SparseMatrix<adouble> spVoltAngle(totalNum,1);
-    Eigen::SparseMatrix<adouble> spAngleIJ(totalNum,totalNum);
+    Eigen::SparseMatrix<adouble> spCosAngleIJ(totalNum,totalNum);
+    Eigen::SparseMatrix<adouble> spSinAngleIJ(totalNum,totalNum);
     Eigen::SparseMatrix<adouble> spY(totalNum,totalNum);
     std::list<Eigen::Triplet<adouble> > voltList;//幅值
     std::list<Eigen::Triplet<adouble> > voltAngleList;//角度
@@ -184,13 +190,13 @@ void PFJacobian::MakeTrace(double *x)
     //得到AngleIJ
     boost::shared_ptr<Eigen::SparseMatrix<double> > YAngle=this->mYMatrix.GetYAngleMatrix();
     boost::shared_ptr<Eigen::SparseMatrix<double> > Y=this->mYMatrix.GetYMatrix();
-    std::list<Eigen::Triplet<adouble> > TripAngleIJ;
+    std::list<Eigen::Triplet<adouble> > TripCosAngleIJ;
 
     for(int i=0; i<YAngle->outerSize(); i++)
     {
         for(Eigen::SparseMatrix<double>::InnerIterator it(*YAngle,i); it; ++it)
         {
-            TripAngleIJ.push_back(
+            TripCosAngleIJ.push_back(
                 Eigen::Triplet<adouble>(
                     it.row(),
                     it.col(),
@@ -201,9 +207,7 @@ void PFJacobian::MakeTrace(double *x)
 
         }
     }
-    spAngleIJ.setFromTriplets(TripAngleIJ.begin(),TripAngleIJ.end());
-
-
+    spCosAngleIJ.setFromTriplets(TripCosAngleIJ.begin(),TripCosAngleIJ.end());
     std::list<Eigen::Triplet<adouble> > TripY;
     for(int i=0; i<Y->outerSize(); i++)
     {
@@ -219,14 +223,11 @@ void PFJacobian::MakeTrace(double *x)
         }
     }
     spY.setFromTriplets(TripY.begin(),TripY.end());
-
-
-
     Eigen::SparseMatrix<adouble> YxCos(totalNum,totalNum);
-    YxCos=spY.cwiseProduct(spAngleIJ);
+    YxCos=spY.cwiseProduct(spCosAngleIJ);
 
-    std::cout<<"spAngleIJ"<<std::endl;
-    std::cout<<spAngleIJ<<std::endl;
+//    std::cout<<"spAngleIJ"<<std::endl;
+//    std::cout<<spAngleIJ<<std::endl;
 
     Eigen::SparseMatrix<adouble> P(totalNum,1);
     P=spVolt.cwiseProduct(YxCos*spVolt);
@@ -238,24 +239,58 @@ void PFJacobian::MakeTrace(double *x)
             _P[it.row()]=it.value();
         }
     }
-
-
-
     for(int i=0; i<totalNum; i++)
     {
         _P[i]>>=dummy[i];
-        std::cout<<dummy[i]<<std::endl;
+        //std::cout<<dummy[i]<<std::endl;
+    }
+    //开始形成Q方程
+    std::list<Eigen::Triplet<adouble> > TripSinAngleIJ;
+
+    for(int i=0; i<YAngle->outerSize(); i++)
+    {
+        for(Eigen::SparseMatrix<double>::InnerIterator it(*YAngle,i); it; ++it)
+        {
+            TripSinAngleIJ.push_back(
+                Eigen::Triplet<adouble>(
+                    it.row(),
+                    it.col(),
+                    sin(xVoltAngle[it.row()]-xVoltAngle[it.col()]-it.value())
+                )
+            );
+
+
+        }
+    }
+    spSinAngleIJ.setFromTriplets(TripSinAngleIJ.begin(),TripSinAngleIJ.end());
+    Eigen::SparseMatrix<adouble> YxSin(totalNum,totalNum);
+    YxSin=spY.cwiseProduct(spSinAngleIJ);
+    Eigen::SparseMatrix<adouble> Q(totalNum,1);
+    Q=spVolt.cwiseProduct(YxSin*spVolt);
+    adouble *_Q=new adouble[totalNum];
+    for(int i=0; i<Q.outerSize(); i++)
+    {
+        for(Eigen::SparseMatrix<adouble>::InnerIterator it(Q,i); it; ++it)
+        {
+            _Q[it.row()]=it.value();
+        }
+    }
+    for(int i=0; i<totalNum; i++)
+    {
+        _Q[i]>>=dummy[i];
+        //std::cout<<dummy[i]<<std::endl;
     }
 
     trace_off();
     delete[] _P;
+    delete[] _Q;
 }
 
 
 void PFJacobian::Fun(double *x,double *y)
 {
     int totalNode=this->mReader.GetTotalNodeNum();
-    function(10,totalNode,totalNode*2,x,y);
+    function(10,totalNode*2,totalNode*2,x,y);
 }
 
 }
