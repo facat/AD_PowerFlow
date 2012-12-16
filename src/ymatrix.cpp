@@ -128,6 +128,7 @@ void YMatrix::MakeGroundBranchParameter(boost::shared_ptr<std::list<groundBranch
             ite++)
     {
         groundBranchStruct groundBranch;
+        groundBranch=*ite;
         this->mGroundBranchB.push_back(
             Eigen::Triplet<double>(groundBranch.i,
                                    groundBranch.i,

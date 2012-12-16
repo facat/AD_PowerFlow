@@ -107,6 +107,40 @@ void PFJacobian::Make(const std::vector<double> &VoltAngle,const std::vector<dou
 
     jacobian(10,totalNum*2,totalNum*2,x,jacoMat);
     this->Modify(jacoMat);
+
+    //用Eigen存储一下，然后等下变成稀疏的形式
+    std::list<Eigen::Triplet<double> > jacoTripletList;
+    for(int i=0;i<totalNum*2;++i)
+    {
+        for(int j=0;j<totalNum*2;++j)
+        {
+            jacoTripletList.push_back(
+                                      Eigen::Triplet<double>(
+                                                     i,
+                                                     j,
+                                                     jacoMat[i][j]
+                                                     )
+
+                                      );
+        }
+    }
+    Eigen::SparseMatrix<double> spJacoMat(totalNum*2,totalNum*2);
+    spJacoMat.setFromTriplets(jacoTripletList.begin(),jacoTripletList.end());
+    spJacoMat.makeCompressed();
+//    std::cout<<"spJacoMat.makeCompressed()"<<std::endl;
+//    std::cout<<spJacoMat<<std::endl;
+    sparseMatSruct sparseMatT;
+    sparseMatT.Ai.reset(new int[spJacoMat.nonZeros()]);
+    sparseMatT.Ap.reset(new int[spJacoMat.nonZeros()+1]);
+    sparseMatT.Ax.reset(new double[spJacoMat.nonZeros()]);
+    for(int i=0;i<spJacoMat.nonZeros();++i)//注意！！ 其实传过去的是sparseMat的转置。
+    {
+        sparseMatT.Ai[i]=spJacoMat.innerIndexPtr()[i];
+        sparseMatT.Ap[i]=spJacoMat.outerIndexPtr()[i];
+        sparseMatT.Ax[i]=spJacoMat.valuePtr()[i];
+    }
+    sparseMatT.dim=totalNum*2;
+    this->mSparseMatSruct=sparseMatT;
     std::cout<<"fun"<<std::endl;
     this->Fun(x,y);
     for(int i=0; i<totalNum*2; i++)
@@ -324,10 +358,10 @@ void PFJacobian::Modify(double **jacoMat)//为了PV和平衡节点进行修改�
         value=*ite;
         for(int j=0; j<totalNum*2; j++)
         {
-            jacoMat[value.i][j]=0;
-            jacoMat[j][value.i]=0;
+            jacoMat[value.i+totalNum][j]=0;
+            jacoMat[j][value.i+totalNum]=0;
         }
-        jacoMat[value.i][value.i]=1;
+        jacoMat[value.i+totalNum][value.i+totalNum]=1;
     }
 
 }
@@ -360,6 +394,11 @@ void PFJacobian::Unbalance(double *x)
 boost::shared_array<double> PFJacobian::GetUnbalance() const
 {
     return this->mUnbanlance;
+}
+
+sparseMatSruct PFJacobian::GetJacoBian() const
+{
+    return this->mSparseMatSruct;
 }
 
 }

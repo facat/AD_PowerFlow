@@ -124,7 +124,7 @@ bool iPsoTextReader::Read(const char *filePath)
 			}
 			groundBranchStruct groundBranch;
 			groundBranch.i=boost::lexical_cast<int>(sep.at(0))-1;
-			groundBranch.b=boost::lexical_cast<int>(sep.at(1));
+			groundBranch.b=boost::lexical_cast<double>(sep.at(1));
 			groundBranch.g=0;
 			this->mgroundBranchData->push_back(groundBranch);
 		}

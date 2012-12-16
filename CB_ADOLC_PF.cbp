@@ -17,10 +17,17 @@
 					<Add directory="D:/MyPro/CB_ADOLC_PF/src" />
 					<Add directory="D:/Lib/eigen" />
 					<Add directory="D:/Lib/ADOL-C-GCC/library/include" />
+					<Add directory="D:/Lib/SuitSparseLib/include" />
 				</Compiler>
 				<Linker>
 					<Add library="D:\Lib\ADOL-C-GCC\library\lib\libadolc.a" />
 					<Add library="D:\Lib\ColPack-GCC\lib\libColPack.a" />
+					<Add library="D:\Lib\SuitSparseLib\libklu.a" />
+					<Add library="D:\Lib\SuitSparseLib\libamd.a" />
+					<Add library="D:\Lib\SuitSparseLib\libbtf.a" />
+					<Add library="D:\Lib\SuitSparseLib\libccolamd.a" />
+					<Add library="D:\Lib\SuitSparseLib\libcamd.a" />
+					<Add library="D:\Lib\SuitSparseLib\libcolamd.a" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -49,6 +56,10 @@
 		<Unit filename="src/ipsotextreader.h" />
 		<Unit filename="src/pfjacobian.cpp" />
 		<Unit filename="src/pfjacobian.h" />
+		<Unit filename="src/powerflow.cpp" />
+		<Unit filename="src/powerflow.h" />
+		<Unit filename="src/solve.cpp" />
+		<Unit filename="src/solve.h" />
 		<Unit filename="src/ymatrix.cpp" />
 		<Unit filename="src/ymatrix.h" />
 		<Extensions>

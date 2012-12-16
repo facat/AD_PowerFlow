@@ -1,6 +1,6 @@
 #ifndef COMMONSTRUCTURE_H_INCLUDED
 #define COMMONSTRUCTURE_H_INCLUDED
-
+#include <boost/shared_array.hpp>
 typedef struct
 {
     int totalNode;
@@ -86,5 +86,13 @@ typedef struct//有功出力限制
     double fixVolt;//电压定值
 } genReactivepowerLimitStruct;
 
+typedef struct//有功出力限制
+{
+    int dim;
+    boost::shared_array<int > Ap;
+    boost::shared_array<int > Ai;
+    boost::shared_array<double > Ax;
+    //boost::shared_array<double > b;
+}sparseMatSruct;
 
 #endif // COMMONSTRUCTURE_H_INCLUDED

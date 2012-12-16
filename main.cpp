@@ -11,6 +11,7 @@
 #include <list>
 #include <boost/shared_ptr.hpp>
 #include <boost/shared_array.hpp>
+#include <powerflow.h>
 using namespace std;
 
 //int main()
@@ -81,45 +82,8 @@ using namespace std;
 int main()
 {
 	cout << "Hello world!" << endl;
-	DMY::iPsoTextReader reader;
-	if(reader.Read("E:/OPF/ieee4.dat"))
-	{
-		DMY::YMatrix yMatrix(reader);
-		if(yMatrix.MakeParameter())
-		{
-//		    std::cout<<"Y"<<std::endl;
-//			std::cout<<*(yMatrix.GetYMatrix())<<std::endl;
-//			std::cout<<"YAngle"<<std::endl;
-//			std::cout<<*(yMatrix.GetYAngleMatrix())<<std::endl;
-			DMY::PFJacobian pfJacobian(reader,yMatrix);
-			std::vector<double> volt;
-			volt.resize(reader.GetTotalNodeNum());
-			std::vector<double> voltAngle;
-			voltAngle.resize(reader.GetTotalNodeNum());
-			for(int i=0;i<reader.GetTotalNodeNum();++i)
-            {
-                volt[i]=1;
-                voltAngle[i]=0;
-            }
-            //置平衡节点电压
-            boost::shared_ptr<std::list<genReactivepowerLimitStruct> > genRepowLimit(reader.GetGenReactivepowerLimitData());
-            for(std::list<genReactivepowerLimitStruct>::iterator ite=genRepowLimit->begin();
-            ite!=genRepowLimit->end();
-            ite++)
-            {
-                genReactivepowerLimitStruct value;
-                value=*ite;
-                volt[value.i]=value.fixVolt;
-            }
-			pfJacobian.Make(voltAngle,volt);
-
-		}
-		else
-        {
-            std::cout<<"线路参数错误!"<<std::endl;
-        }
-
-	}
+    DMY::PowerFlow pf;
+    pf.Run("e:/opf/ieee14.dat");
 
 
 	return 0;

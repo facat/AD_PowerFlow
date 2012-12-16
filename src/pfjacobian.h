@@ -26,6 +26,7 @@ class PFJacobian
     void Fun(double *x,double *y);
     void Unbalance(double *x);
     boost::shared_array<double> GetUnbalance() const;
+    sparseMatSruct GetJacoBian() const;
     private:
         void MakeTrace(double *x);
         void Modify(double **jacoMat);//为了PV和平衡节点进行修改。
@@ -34,6 +35,7 @@ class PFJacobian
         const YMatrix &mYMatrix;
         const AbstractReader &mReader;
         boost::shared_array<double> mUnbanlance;
+        sparseMatSruct mSparseMatSruct;
 };
 
 }
