@@ -19,7 +19,7 @@ int main()
 {
 	cout << "Hello world!" << endl;
     DMY::PowerFlow pf;
-    pf.Run("e:/opf/ieee118.dat");
+    pf.Run("e:/opf/ieee1047.dat");
 
 
 	return 0;

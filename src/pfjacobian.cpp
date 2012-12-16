@@ -99,6 +99,7 @@ void PFJacobian::Make(const std::vector<double> &VoltAngle,const std::vector<dou
 
     this->MakeTrace(x);
     this->Unbalance(x);
+
     //MakeV2(x);
 
     //return;
@@ -106,6 +107,7 @@ void PFJacobian::Make(const std::vector<double> &VoltAngle,const std::vector<dou
 
 
     jacobian(10,totalNum*2,totalNum*2,x,jacoMat);
+
     this->Modify(jacoMat);
 
     //用Eigen存储一下，然后等下变成稀疏的形式
@@ -124,20 +126,27 @@ void PFJacobian::Make(const std::vector<double> &VoltAngle,const std::vector<dou
                                       );
         }
     }
+
     Eigen::SparseMatrix<double> spJacoMat(totalNum*2,totalNum*2);
     spJacoMat.setFromTriplets(jacoTripletList.begin(),jacoTripletList.end());
     spJacoMat.makeCompressed();
+
 //    std::cout<<"spJacoMat.makeCompressed()"<<std::endl;
 //    std::cout<<spJacoMat<<std::endl;
     sparseMatSruct sparseMatT;
     sparseMatT.Ai.reset(new int[spJacoMat.nonZeros()]);
-    sparseMatT.Ap.reset(new int[spJacoMat.nonZeros()+1]);
+    sparseMatT.Ap.reset(new int[spJacoMat.outerSize()+1]);
     sparseMatT.Ax.reset(new double[spJacoMat.nonZeros()]);
+
+    int outerSize=spJacoMat.outerSize();
     for(int i=0;i<spJacoMat.nonZeros();++i)//注意！！ 其实传过去的是sparseMat的转置。
     {
         sparseMatT.Ai[i]=spJacoMat.innerIndexPtr()[i];
-        sparseMatT.Ap[i]=spJacoMat.outerIndexPtr()[i];
         sparseMatT.Ax[i]=spJacoMat.valuePtr()[i];
+    }
+    for(int i=0;i<spJacoMat.outerSize()+1;++i)//注意！！ 其实传过去的是sparseMat的转置。
+    {
+        sparseMatT.Ap[i]=spJacoMat.outerIndexPtr()[i];
     }
     sparseMatT.dim=totalNum*2;
     this->mSparseMatSruct=sparseMatT;
