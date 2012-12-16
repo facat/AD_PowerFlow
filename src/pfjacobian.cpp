@@ -141,22 +141,22 @@ void PFJacobian::Make(const std::vector<double> &VoltAngle,const std::vector<dou
     }
     sparseMatT.dim=totalNum*2;
     this->mSparseMatSruct=sparseMatT;
-    std::cout<<"fun"<<std::endl;
-    this->Fun(x,y);
-    for(int i=0; i<totalNum*2; i++)
-    {
-        std::cout<<y[i]<<std::endl;
-    }
+//    std::cout<<"fun"<<std::endl;
+//    this->Fun(x,y);
+//    for(int i=0; i<totalNum*2; i++)
+//    {
+//        std::cout<<y[i]<<std::endl;
+//    }
 
 
     delete[] x;
     for(int i=0; i<totalNum; i++)
     {
-        for(int j=0; j<totalNum; j++)
-        {
-            std::cout<<jacoMat[i+totalNum][j+totalNum]<<"\t";
-        }
-        std::cout<<std::endl;
+//        for(int j=0; j<totalNum; j++)
+//        {
+//            std::cout<<jacoMat[i+totalNum][j+totalNum]<<"\t";
+//        }
+//        std::cout<<std::endl;
         delete[] jacoMat[i];
     }
     delete[] jacoMat;
