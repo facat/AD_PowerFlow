@@ -26,6 +26,7 @@ class PFJacobian
     void Fun(double *x,double *y);
     private:
         void MakeTrace(double *x);
+        void Modify(double **jacoMat);//为了PV和平衡节点进行修改。
     protected:
     private:
         const YMatrix &mYMatrix;

@@ -105,7 +105,6 @@ void PFJacobian::Make(const std::vector<double> &VoltAngle,const std::vector<dou
 
 
     jacobian(10,totalNum*2,totalNum*2,x,jacoMat);
-
     std::cout<<"fun"<<std::endl;
     this->Fun(x,y);
     for(int i=0; i<totalNum*2; i++)
@@ -292,5 +291,44 @@ void PFJacobian::Fun(double *x,double *y)
     int totalNode=this->mReader.GetTotalNodeNum();
     function(10,totalNode*2,totalNode*2,x,y);
 }
+
+void PFJacobian::Modify(double **jacoMat)//为了PV和平衡节点进行修改。
+{
+    int totalNum=this->mReader.GetTotalNodeNum();
+    //平衡节点
+    boost::shared_ptr<std::list<swingNodeStruct> > swingNode=this->mReader.GetSwingNodeData();
+    for(std::list<swingNodeStruct>::iterator ite=swingNode->begin();
+            ite!=swingNode->end();
+            ite++
+       )
+    {
+        swingNodeStruct value;
+        value=*ite;
+        for(int j=0; j<totalNum*2; j++)
+        {
+            jacoMat[value.i][j]=0;
+            jacoMat[j][value.i]=0;
+        }
+        jacoMat[value.i][value.i]=1;
+    }
+    //PV节点
+    boost::shared_ptr<std::list<genReactivepowerLimitStruct> > genRepowLimit=this->mReader.GetGenReactivepowerLimitData();
+    for(std::list<genReactivepowerLimitStruct>::iterator ite=genRepowLimit->begin();
+            ite!=genRepowLimit->end();
+            ite++
+       )
+    {
+        genReactivepowerLimitStruct value;
+        value=*ite;
+        for(int j=0; j<totalNum*2; j++)
+        {
+            jacoMat[value.i][j]=0;
+            jacoMat[j][value.i]=0;
+        }
+        jacoMat[value.i][value.i]=1;
+    }
+
+}
+
 
 }
