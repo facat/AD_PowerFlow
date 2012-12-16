@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1355661504 source:d:\mypro\cb_adolc_pf\main.cpp
+1355665671 source:d:\mypro\cb_adolc_pf\main.cpp
 	<iostream>
 	<ipsotextreader.h>
 	<ymatrix.h>
@@ -11,8 +11,9 @@
 	<boost/shared_ptr.hpp>
 	<boost/shared_array.hpp>
 	<powerflow.h>
+	<fstream>
 
-1355660462 d:\mypro\cb_adolc_pf\src\ipsotextreader.h
+1355662115 d:\mypro\cb_adolc_pf\src\ipsotextreader.h
 	"abstractreader.h"
 	<boost/algorithm/string/split.hpp>
 	<boost/lexical_cast.hpp>
@@ -3167,7 +3168,7 @@
 
 1236012322 d:\lib\boost_1_52_0\boost\smart_ptr\detail\operator_bool.hpp
 
-1355660462 d:\mypro\cb_adolc_pf\src\commonstructure.h
+1355662115 d:\mypro\cb_adolc_pf\src\commonstructure.h
 	<boost/shared_array.hpp>
 
 1349021252 d:\lib\boost_1_52_0\boost\lexical_cast.hpp
@@ -4103,7 +4104,7 @@
 	<iosfwd>
 	<string>
 
-1355660462 d:\mypro\cb_adolc_pf\src\ymatrix.h
+1355662115 d:\mypro\cb_adolc_pf\src\ymatrix.h
 	"ipsotextreader.h"
 	<Eigen/Sparse>
 	<boost/shared_ptr.hpp>
@@ -5040,11 +5041,11 @@
 1355562582 source:d:\mypro\cb_adolc_pf\src\abstractreader.cpp
 	"abstractreader.h"
 
-1355660462 source:d:\mypro\cb_adolc_pf\src\ipsotextreader.cpp
+1355662115 source:d:\mypro\cb_adolc_pf\src\ipsotextreader.cpp
 	"ipsotextreader.h"
 	<cstring>
 
-1355660462 source:d:\mypro\cb_adolc_pf\src\ymatrix.cpp
+1355662115 source:d:\mypro\cb_adolc_pf\src\ymatrix.cpp
 	"ymatrix.h"
 
 1236010936 d:\lib\boost_1_52_0\boost\shared_array.hpp
@@ -5073,10 +5074,10 @@
 	<functional>
 	<new>
 
-1355661301 source:d:\mypro\cb_adolc_pf\src\pfjacobian.cpp
+1355665659 source:d:\mypro\cb_adolc_pf\src\pfjacobian.cpp
 	"pfjacobian.h"
 
-1355660462 d:\mypro\cb_adolc_pf\src\pfjacobian.h
+1355663718 d:\mypro\cb_adolc_pf\src\pfjacobian.h
 	<Eigen/Sparse>
 	<boost/shared_ptr.hpp>
 	<YMatrix.h>
@@ -5088,6 +5089,8 @@
 	<math.h>
 	<iostream>
 	<adolc_addtional_support.h>
+	<adolc/adolc_sparse.h>
+	<map>
 
 1354780315 d:\lib\adol-c-gcc\library\include\adolc\adolc.h
 	<adolc/common.h>
@@ -5170,14 +5173,14 @@
 1354780315 d:\lib\adol-c-gcc\library\include\adolc\adalloc.h
 	<adolc/common.h>
 
-1355660462 d:\mypro\cb_adolc_pf\src\adolc_addtional_support.h
+1355662115 d:\mypro\cb_adolc_pf\src\adolc_addtional_support.h
 	<adolc/adouble.h>
 	<Eigen/Core>
 
-1355660462 source:d:\mypro\cb_adolc_pf\src\solve.cpp
+1355662115 source:d:\mypro\cb_adolc_pf\src\solve.cpp
 	"solve.h"
 
-1355660462 d:\mypro\cb_adolc_pf\src\solve.h
+1355662115 d:\mypro\cb_adolc_pf\src\solve.h
 	<klu.h>
 
 1342748790 d:\lib\suitsparselib\include\klu.h
@@ -5200,7 +5203,7 @@
 1342748789 d:\lib\suitsparselib\include\btf.h
 	"SuiteSparse_config.h"
 
-1355661925 source:d:\mypro\cb_adolc_pf\src\powerflow.cpp
+1355665851 source:d:\mypro\cb_adolc_pf\src\powerflow.cpp
 	"powerflow.h"
 	<vector>
 	<pfjacobian.h>
@@ -5208,10 +5211,14 @@
 	<boost/shared_ptr.hpp>
 	<solve.h>
 
-1355661925 d:\mypro\cb_adolc_pf\src\powerflow.h
+1355662115 d:\mypro\cb_adolc_pf\src\powerflow.h
 	<vector>
 	<boost/shared_ptr.hpp>
 	<list>
 	<commonstructure.h>
 	<iostream>
+
+1354780316 d:\lib\adol-c-gcc\library\include\adolc\adolc_sparse.h
+	<adolc/sparse/sparsedrivers.h>
+	<adolc/sparse/sparse_fo_rev.h>
 

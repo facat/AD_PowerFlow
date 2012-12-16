@@ -16,6 +16,9 @@
 #include <math.h>
 #include <iostream>
 #include <adolc_addtional_support.h>
+#include <adolc/adolc_sparse.h>
+//#include <boost/functional/hash.hpp>
+#include <map>
 namespace DMY{
 class PFJacobian
 {
@@ -30,6 +33,7 @@ class PFJacobian
     private:
         void MakeTrace(double *x);
         void Modify(double **jacoMat);//为了PV和平衡节点进行修改。
+        void Modify(int nnz,unsigned int *rind,unsigned int *cind,double *values);//为了PV和平衡节点进行修改。
     protected:
     private:
         const YMatrix &mYMatrix;

@@ -32,6 +32,7 @@ bool PowerFlow::Run(const char *filePath)
             //开始进入循环
             for(K=1; K<reader.GetMaxIteration()+1; ++K)
             {
+                std::cout<<"正在进行第"<<K<<"次迭代"<<std::endl;
                 pfJacobian.Make(this->mVoltAngle,this->mVolt);
 //                std::cout<<"得到不平衡量"<<std::endl;
                 //得到不平衡量
@@ -72,7 +73,7 @@ bool PowerFlow::Run(const char *filePath)
                 spMat=pfJacobian.GetJacoBian();
                 Solve::solveT(spMat.dim,spMat.Ap.get(),spMat.Ai.get(),spMat.Ax.get(),b);
 //                std::cout<<"开始计算迭代数"<<std::endl;
-                std::cout<<"正在进行第"<<K<<"次迭代"<<std::endl;
+
                 this->Update(this->mVoltAngle,this->mVolt,b);
 
             }
