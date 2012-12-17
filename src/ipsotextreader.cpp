@@ -52,7 +52,6 @@ bool iPsoTextReader::Read(const char *filePath)
 		mBasicInfo.baseMVA=boost::lexical_cast<double>(sep.at(2));
 		mBasicInfo.maxIte=boost::lexical_cast<double>(sep.at(3));
 		mBasicInfo.centerParameter=boost::lexical_cast<double>(sep.at(4));
-		//mBasicInfo.centerParameter=boost::lexical_cast<double>(".1");
 	}
 	if(!file.eof())
 	{
@@ -210,7 +209,6 @@ bool iPsoTextReader::Read(const char *filePath)
 		default:
 			break;
 		}
-		//boost::algorithm::split(sep,line,',');
 	}
 	file.close();
 	return true;
@@ -234,13 +232,11 @@ std::string iPsoTextReader::Simplified(std::string &str)//删除多余的空格，只用一
 		{
 			spaceAhead=true;
 			newStr.push_back(' ');
-			//newStr+=" ";
 		}
 		else
 		{
 			spaceAhead=false;
 			newStr.push_back(_str.at(i));
-			//newStr+=_str.at(i);
 		}
 	}
 
@@ -249,17 +245,6 @@ std::string iPsoTextReader::Simplified(std::string &str)//删除多余的空格，只用一
 
 
 }
-
-/*std::string iPsoTextReader::Simplified(std::string &str)//删除多余的空格，只用一个空格作为间隔。
-{
-	return std::string();
-	std::string newStr;
-	std::string _str;
-	//std::string _str(boost::algorithm::trim_copy(str));
-	_str="2 1 4 .12 .5 0.0192";
-	return _str;
-
-}*/
 
 
 }

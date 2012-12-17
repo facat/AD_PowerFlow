@@ -16,7 +16,7 @@ PowerFlow::PowerFlow()
 bool PowerFlow::Run(const char *filePath)
 {
     iPsoTextReader reader;
-    int K;
+    int K=0;
     if(reader.Read(filePath))
     {
         YMatrix yMatrix(reader);
@@ -34,19 +34,10 @@ bool PowerFlow::Run(const char *filePath)
             {
                 std::cout<<"正在进行第"<<K<<"次迭代"<<std::endl;
                 pfJacobian.Make(this->mVoltAngle,this->mVolt);
-//                std::cout<<"得到不平衡量"<<std::endl;
                 //得到不平衡量
                 unbalance=pfJacobian.GetUnbalance();
-                b=unbalance.get();
-
-                //准备解出修正量
-//                std::cout<<"准备解出修正量"<<std::endl;
-                for(int i=0; i<reader.GetTotalNodeNum()*2; ++i)
-                {
-                    b[i]=-b[i];
-                }
+                b=unbalance.get();//形成b的时候已经处理过了
                 //对平衡节点进行处理
-//                std::cout<<"对平衡节点进行处理"<<std::endl;
                 for(std::list<swingNodeStruct>::iterator ite=swingNode->begin();
                         ite!=swingNode->end();
                         ++ite)
@@ -55,7 +46,6 @@ bool PowerFlow::Run(const char *filePath)
                     b[value.i]=0;
                 }
                 //对pv节点进行处理
-//                std::cout<<"对pv节点进行处理"<<std::endl;
                 for(std::list<genReactivepowerLimitStruct>::iterator ite=genRepowLimit->begin();
                         ite!=genRepowLimit->end();
                         ++ite)
@@ -63,8 +53,6 @@ bool PowerFlow::Run(const char *filePath)
                     genReactivepowerLimitStruct value=*ite;
                     b[value.i+totalNum]=0;
                 }
-                //检查终止条件
-//                std::cout<<"检查终止条件"<<std::endl;
                 if(this->AbsMax(b,totalNum*2)<reader.GetEPS())
                 {
                     break;
@@ -72,8 +60,6 @@ bool PowerFlow::Run(const char *filePath)
                 sparseMatSruct spMat;
                 spMat=pfJacobian.GetJacoBian();
                 Solve::solveT(spMat.dim,spMat.Ap.get(),spMat.Ai.get(),spMat.Ax.get(),b);
-//                std::cout<<"开始计算迭代数"<<std::endl;
-
                 this->Update(this->mVoltAngle,this->mVolt,b);
 
             }
@@ -103,7 +89,6 @@ void PowerFlow::Initialization(int totalNum,std::vector<double> &VoltAagle,std::
         VoltAagle[i]=0;
     }
     //置平衡节点电压
-    //boost::shared_ptr<std::list<genReactivepowerLimitStruct> > genRepowLimit(reader.GetGenReactivepowerLimitData());
     for(std::list<genReactivepowerLimitStruct>::iterator ite=genRePowLimit->begin();
             ite!=genRePowLimit->end();
             ite++)

@@ -4,70 +4,6 @@
 namespace DMY
 {
 
-
-void MakeV2(double *x)
-{
-    int totalNum=4;
-
-    boost::shared_array<adouble> xVolt(new adouble [totalNum]);
-    //boost::shared_array<adouble> xVoltAngle(new adouble [totalNum]);
-    //boost::shared_array<adouble> y(new adouble [totalNum]);
-    boost::shared_array<double> dummy(new double [totalNum]);
-    trace_on(10);
-    for(int i=0; i<totalNum; i++)
-    {
-        xVolt[i]<<=pow(x[i],3);
-        //xVoltAngle[i]<<=x[i+totalNum];
-    }
-
-    /********************************************/
-
-    adouble *_P=new adouble[totalNum];
-    for(int i=0; i<totalNum; i++)
-    {
-        _P[i]=xVolt[i];
-        _P[i]>>=dummy[i];
-        std::cout<<dummy[i]<<std::endl;
-    }
-
-    trace_off();
-
-//double *x=new double[totalNum*2];
-    double ** jacoMat=new double *[totalNum];
-    double *y=new double[totalNum];
-    for(int i=0; i<totalNum; i++)
-    {
-
-        jacoMat[i]=new double[totalNum];
-    }
-
-    jacobian(10,totalNum,totalNum,x,jacoMat);
-
-    std::cout<<"fun"<<std::endl;
-    function(10,4,4,x,y);
-    for(int i=0; i<totalNum; i++)
-    {
-        std::cout<<y[i]<<std::endl;
-    }
-
-
-    delete[] x;
-    for(int i=0; i<totalNum; i++)
-    {
-        for(int j=0; j<totalNum; j++)
-        {
-            std::cout<<jacoMat[i][j]<<"\t";
-        }
-        std::cout<<std::endl;
-        delete[] jacoMat[i];
-    }
-    delete[] jacoMat;
-    delete[] y;
-
-
-    return;
-}
-
 PFJacobian::PFJacobian(const AbstractReader &reader,const YMatrix &yMatrix):
     mYMatrix(yMatrix),
     mReader(reader)
@@ -95,17 +31,10 @@ void PFJacobian::Make(const std::vector<double> &VoltAngle,const std::vector<dou
 //
 //        jacoMat[i]=new double[totalNum*2];
 //    }
-    //
 
     this->MakeTrace(x);
     this->Unbalance(x);
-
-    //MakeV2(x);
-
-    //return;
-
-
-     int option[4];
+    int option[4];
     option[0]=0;
     option[1]=0;
     option[2]=0;
@@ -119,14 +48,12 @@ void PFJacobian::Make(const std::vector<double> &VoltAngle,const std::vector<dou
     boost::shared_array<unsigned int> PtrRind(new unsigned int[nnz]);
     boost::shared_array<unsigned int> PtrCind(new unsigned int[nnz]);
     boost::shared_array<double> PtrValue(new double[nnz]);
-    for(int i=0;i<nnz;++i)
+    for(int i=0; i<nnz; ++i)
     {
         PtrCind[i]=cind[i];
         PtrRind[i]=rind[i];
         PtrValue[i]=values[i];
-        //std::cout<<values[i]<<",";
     }
-    //std::cout<<std::endl;
     free(rind);
     free(cind);
     free(values);
@@ -135,17 +62,17 @@ void PFJacobian::Make(const std::vector<double> &VoltAngle,const std::vector<dou
 
     //用Eigen存储一下，然后等下变成稀疏的形式
     std::list<Eigen::Triplet<double> > jacoTripletList;
-    for(int i=0;i<nnz;++i)
+    for(int i=0; i<nnz; ++i)
     {
 
-            jacoTripletList.push_back(
-                                      Eigen::Triplet<double>(
-                                                     PtrRind[i],
-                                                     PtrCind[i],
-                                                     PtrValue[i]
-                                                     )
+        jacoTripletList.push_back(
+            Eigen::Triplet<double>(
+                PtrRind[i],
+                PtrCind[i],
+                PtrValue[i]
+            )
 
-                                      );
+        );
 
     }
 
@@ -159,28 +86,19 @@ void PFJacobian::Make(const std::vector<double> &VoltAngle,const std::vector<dou
     sparseMatT.Ai.reset(new int[spJacoMat.nonZeros()]);
     sparseMatT.Ap.reset(new int[spJacoMat.outerSize()+1]);
     sparseMatT.Ax.reset(new double[spJacoMat.nonZeros()]);
-
-    //int outerSize=spJacoMat.outerSize();
-    for(int i=0;i<spJacoMat.nonZeros();++i)//注意！！ 其实传过去的是sparseMat的转置。
+    for(int i=0; i<spJacoMat.nonZeros(); ++i) //注意！！ 其实传过去的是sparseMat的转置。
     {
         sparseMatT.Ai[i]=spJacoMat.innerIndexPtr()[i];
         sparseMatT.Ax[i]=spJacoMat.valuePtr()[i];
     }
-    for(int i=0;i<spJacoMat.outerSize()+1;++i)//注意！！ 其实传过去的是sparseMat的转置。
+    for(int i=0; i<spJacoMat.outerSize()+1; ++i) //注意！！ 其实传过去的是sparseMat的转置。
     {
         sparseMatT.Ap[i]=spJacoMat.outerIndexPtr()[i];
     }
     sparseMatT.dim=totalNum*2;
     this->mSparseMatSruct=sparseMatT;
-//    std::cout<<"fun"<<std::endl;
-//    this->Fun(x,y);
-//    for(int i=0; i<totalNum*2; i++)
-//    {
-//        std::cout<<y[i]<<std::endl;
-//    }
-
-
     delete[] x;
+    delete[] y;
 //    for(int i=0; i<totalNum; i++)
 //    {
 ////        for(int j=0; j<totalNum; j++)
@@ -191,7 +109,7 @@ void PFJacobian::Make(const std::vector<double> &VoltAngle,const std::vector<dou
 //        delete[] jacoMat[i];
 //    }
 //    delete[] jacoMat;
-    delete[] y;
+
 
 
 }
@@ -203,7 +121,6 @@ void PFJacobian::MakeTrace(double *x)
     //PL+PD-PG=0
     int totalNum=this->mReader.GetTotalNodeNum();
     Eigen::SparseMatrix<adouble> spVolt(totalNum,1);
-//    Eigen::SparseMatrix<adouble> spVoltAngle(totalNum,1);
     Eigen::SparseMatrix<adouble> spCosAngleIJ(totalNum,totalNum);
     Eigen::SparseMatrix<adouble> spSinAngleIJ(totalNum,totalNum);
     Eigen::SparseMatrix<adouble> spY(totalNum,totalNum);
@@ -211,38 +128,20 @@ void PFJacobian::MakeTrace(double *x)
     std::list<Eigen::Triplet<adouble> > voltAngleList;//角度
     boost::shared_array<adouble> xVolt(new adouble [totalNum]);
     boost::shared_array<adouble> xVoltAngle(new adouble [totalNum]);
-    //boost::shared_array<adouble> y(new adouble [totalNum]);
     boost::shared_array<double> dummy(new double [totalNum]);
     trace_on(10);
 
 
     for(int i=0; i<totalNum; i++)
     {
-        //xVolt[i]<<=x[i];
+
         xVoltAngle[i]<<=x[i];
     }
 
     for(int i=0; i<totalNum; i++)
     {
         xVolt[i]<<=x[i+totalNum];
-        //xVoltAngle[i]<<=x[i+totalNum];
     }
-//    /********************************************/
-//
-//    adouble *_P=new adouble[totalNum];
-//    for(int i=0; i<totalNum; i++)
-//    {
-//        _P[i]=xVolt[i];
-//        _P[i]>>=dummy[i];
-//        std::cout<<dummy[i]<<std::endl;
-//    }
-//
-//    trace_off();
-//    return;
-//
-//    /**********************************************/
-
-
     for(int i=0; i<totalNum; i++)
     {
         voltList.push_back(
@@ -291,10 +190,6 @@ void PFJacobian::MakeTrace(double *x)
     spY.setFromTriplets(TripY.begin(),TripY.end());
     Eigen::SparseMatrix<adouble> YxCos(totalNum,totalNum);
     YxCos=spY.cwiseProduct(spCosAngleIJ);
-
-//    std::cout<<"spAngleIJ"<<std::endl;
-//    std::cout<<spAngleIJ<<std::endl;
-
     Eigen::SparseMatrix<adouble> P(totalNum,1);
     P=spVolt.cwiseProduct(YxCos*spVolt);
     adouble *_P=new adouble[totalNum];
@@ -308,7 +203,6 @@ void PFJacobian::MakeTrace(double *x)
     for(int i=0; i<totalNum; i++)
     {
         _P[i]>>=dummy[i];
-        //std::cout<<dummy[i]<<std::endl;
     }
     //开始形成Q方程
     std::list<Eigen::Triplet<adouble> > TripSinAngleIJ;
@@ -344,7 +238,6 @@ void PFJacobian::MakeTrace(double *x)
     for(int i=0; i<totalNum; i++)
     {
         _Q[i]>>=dummy[i];
-        //std::cout<<dummy[i]<<std::endl;
     }
 
     trace_off();
@@ -401,8 +294,7 @@ void PFJacobian::Modify(int nnz,unsigned int *rind,unsigned int *cind,double *va
 {
     int totalNum=this->mReader.GetTotalNodeNum();
     //平衡节点
-    std::map<int,bool> swingNodeList;
-
+    boost::unordered_map<int, bool> swingNodeList;
     boost::shared_ptr<std::list<swingNodeStruct> > swingNode=this->mReader.GetSwingNodeData();
     for(std::list<swingNodeStruct>::iterator ite=swingNode->begin();
             ite!=swingNode->end();
@@ -410,10 +302,10 @@ void PFJacobian::Modify(int nnz,unsigned int *rind,unsigned int *cind,double *va
        )
     {
         swingNodeStruct value=*ite;
-        swingNodeList.insert(std::map<int, bool> :: value_type(value.i, true));
+        swingNodeList.insert(boost::unordered_map<int, bool> :: value_type(value.i, true));
     }
     //PV节点
-    std::map<int,bool> PVNodeList;
+    boost::unordered_map<int,bool> PVNodeList;
     boost::shared_ptr<std::list<genReactivepowerLimitStruct> > genRepowLimit=this->mReader.GetGenReactivepowerLimitData();
     for(std::list<genReactivepowerLimitStruct>::iterator ite=genRepowLimit->begin();
             ite!=genRepowLimit->end();
@@ -422,37 +314,28 @@ void PFJacobian::Modify(int nnz,unsigned int *rind,unsigned int *cind,double *va
     {
         genReactivepowerLimitStruct value;
         value=*ite;
-        PVNodeList.insert(std::map<int, bool> :: value_type(value.i, true) );
+        PVNodeList.insert(boost::unordered_map<int, bool> :: value_type(value.i, true) );
     }
-    for(int k=0;k<nnz;++k)
+    for(int k=0; k<nnz; ++k)
     {
         int i=rind[k];
         int j=cind[k];
         //平衡节点
-        if(swingNodeList.count(i)!=0)
+        if(swingNodeList.count(i)!=0 || swingNodeList.count(j)!=0)
         {
             values[k]=0;
         }
-        if(swingNodeList.count(j)!=0)
-        {
-            values[k]=0;
-        }
-        if(swingNodeList.count(i)!=0 && swingNodeList.count(j)!=0 && i==j)
+        if(swingNodeList.count(i)!=0 && i==j)
         {
             values[k]=1;
         }
         //PV节点
-        if(PVNodeList.count(i-totalNum)!=0 )
+        if(PVNodeList.count(i-totalNum)!=0 || PVNodeList.count(j-totalNum)!=0 )
         {
             values[k]=0;
         }
 
-        if(PVNodeList.count(j-totalNum)!=0 )
-        {
-            values[k]=0;
-        }
-
-        if(PVNodeList.count(i-totalNum)!=0 && PVNodeList.count(j-totalNum)!=0 && i==j)
+        if(PVNodeList.count(i-totalNum)!=0 && i==j)
         {
             values[k]=1;
         }
@@ -466,21 +349,21 @@ void PFJacobian::Unbalance(double *x)
     double *y=new double[totalNode*2];
     function(10,totalNode*2,totalNode*2,x,y);
     this->mUnbanlance.reset(new double[totalNode*2]);
-    for(int i=0;i<totalNode*2;i++)
+    for(int i=0; i<totalNode*2; i++)
     {
         this->mUnbanlance[i]=y[i];
     }
 
     boost::shared_ptr<std::list<nodePowerStruct> > nodePow=this->mReader.GetNodePowerData();
     for(std::list<nodePowerStruct>::iterator ite=nodePow->begin();
-        ite!=nodePow->end();
-        ++ite
-    )
+            ite!=nodePow->end();
+            ++ite
+       )
     {
         nodePowerStruct value;
         value=*ite;
-        this->mUnbanlance[value.i]+=value.PD-value.PG;
-        this->mUnbanlance[value.i+totalNode]+=value.QD-value.QG;
+        this->mUnbanlance[value.i]=value.PG-value.PD-this->mUnbanlance[value.i];
+        this->mUnbanlance[value.i+totalNode]=value.QG-value.QD-this->mUnbanlance[value.i+totalNode];
     }
     delete[] y;
 }

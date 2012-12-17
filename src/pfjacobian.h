@@ -17,8 +17,7 @@
 #include <iostream>
 #include <adolc_addtional_support.h>
 #include <adolc/adolc_sparse.h>
-//#include <boost/functional/hash.hpp>
-#include <map>
+#include <boost/unordered_map.hpp>
 namespace DMY{
 class PFJacobian
 {

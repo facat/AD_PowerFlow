@@ -12,6 +12,7 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-pg" />
 					<Add option="-g" />
 					<Add directory="D:/Lib/boost_1_52_0" />
 					<Add directory="D:/MyPro/CB_ADOLC_PF/src" />
@@ -20,6 +21,7 @@
 					<Add directory="D:/Lib/SuitSparseLib/include" />
 				</Compiler>
 				<Linker>
+					<Add option="-pg -lgmon" />
 					<Add library="D:\Lib\ADOL-C-GCC\library\lib\libadolc.a" />
 					<Add library="D:\Lib\ColPack-GCC\lib\libColPack.a" />
 					<Add library="D:\Lib\SuitSparseLib\libklu.a" />
